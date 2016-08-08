@@ -1,6 +1,6 @@
 CC = gcc
 CFLAG = -Wall -Wextra -Werror
-SRC = main.c lst_tab2d.c print_lst.c 
+SRC = main.c lst_tab2d.c print_lst.c swap.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(patsubst %.c, %.o, $(SRC))
