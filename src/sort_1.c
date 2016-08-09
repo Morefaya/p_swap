@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 15:42:38 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/09 16:28:33 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/09 18:16:42 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,34 @@
 void	sort_1(t_list **lst_a, t_list **lst_b)
 {
 	int	low;
+	int	count;
 	
-	low = ((t_pile)(*(lst_a)->content)).val;
-	rotate(lst_a);
-	while (low != ((t_pile)(*(lst_a)->content)).val)
+	count = 0;
+	while (*lst_a)
 	{
-		if (((t_pile)(*(lst_a)->content)).val < low)
-			low = ((t_pile)(*(lst_a)->content)).val;
-		rotate(&lst_a);
+		low = ((t_pile*)((*lst_a)->content))->val;
+		rotate(lst_a);
+		ft_putendl("ra");
+		count++;
+		while (low != ((t_pile*)((*lst_a)->content))->val)
+		{
+			if (((t_pile*)((*lst_a)->content))->val < low)
+				low = ((t_pile*)((*lst_a)->content))->val;
+			rotate(lst_a);
+			ft_putendl("ra");
+			count++;
+		}
+		push(lst_a, lst_b);
+		ft_putendl("pb");
+		count++;
 	}
-	push(lst_a, lst_b);
+	while (*lst_b)
+	{
+		push(lst_b, lst_a);
+		ft_putendl("pa");
+		count++;
+	}
+	ft_putchar('\n');
+	ft_putnbr(count);
+	ft_putchar('\n');
 }
