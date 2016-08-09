@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_lst.c                                        :+:      :+:    :+:   */
+/*   sort_1.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/01 18:04:31 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/09 13:08:36 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/09 15:42:38 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/09 16:13:04 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_lst(t_list *lst)
+t_list	lowest_cmp(t_list *lst)
+
+void	sort_1(t_list **lst_a, t_list **lst_b)
 {
-	while (lst)
-	{
-		ft_putnbr(((t_pile*)(lst->content))->val);
-		ft_putchar('\t');
-		lst = lst->next;
-	}
-	ft_putchar('\n');
+	int	low;
+	
+	low = ((t_pile)(*(lst)->content)).val;
+	low = (((t_pile)(*(lst)->content)).val \
+		> ((t_pile)(*(lst)->next->content)).val) ? :;
+	while ()
+	{}
 }

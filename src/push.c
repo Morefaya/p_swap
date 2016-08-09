@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_lst.c                                        :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/01 18:04:31 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/09 13:08:36 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/09 13:11:28 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/09 14:16:02 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_lst(t_list *lst)
+void	push(t_list **lst_a, t_list **lst_b)
 {
-	while (lst)
-	{
-		ft_putnbr(((t_pile*)(lst->content))->val);
-		ft_putchar('\t');
-		lst = lst->next;
-	}
-	ft_putchar('\n');
+	t_list	*tmp;
+
+	if (!*lst_a)
+		return ;
+	tmp = *lst_b;
+	*lst_b = *lst_a;
+	*lst_a = (*lst_a)->next;
+	(*lst_b)->next = tmp;
 }

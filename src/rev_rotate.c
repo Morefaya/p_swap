@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_lst.c                                        :+:      :+:    :+:   */
+/*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/01 18:04:31 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/09 13:08:36 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/09 14:59:45 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/09 15:27:19 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	print_lst(t_list *lst)
+void	rev_rotate(t_list **lst)
 {
-	while (lst)
+	t_list	*tmp_1;
+	t_list	*tmp_2;
+
+	if (!*lst)
+		return ;
+	else if (!(*lst)->next)
+		return ;
+	tmp_1 = *lst;
+	while (tmp_1->next)
 	{
-		ft_putnbr(((t_pile*)(lst->content))->val);
-		ft_putchar('\t');
-		lst = lst->next;
+		if (!tmp_1->next->next)
+		{
+			tmp_2 = *lst;
+			*lst = tmp_1->next;
+			tmp_1->next = NULL;
+			(*lst)->next = tmp_2;
+			break ;
+		}
+		tmp_1 = tmp_1->next;
 	}
-	ft_putchar('\n');
 }
