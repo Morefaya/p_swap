@@ -1,6 +1,6 @@
 CC = gcc
 CFLAG = -Wall -Wextra -Werror
-SRC = main.c lst_tab2d.c print_lst.c swap.c push.c rotate.c rev_rotate.c
+SRC = main.c lst_tab2d.c print_lst.c swap.c push.c rotate.c rev_rotate.c sort_1.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(patsubst %.c, %.o, $(SRC))
