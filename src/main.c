@@ -26,8 +26,8 @@ int		main(int ac, char **av)
 		return (1);
 	print_lst(lst_a);
 	swap(&lst_a);
-	//ft_putchar('\n');
-	//print_lst(lst_a);
+	ft_putchar('\n');
+	print_lst(lst_a);
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	return (0);
 }

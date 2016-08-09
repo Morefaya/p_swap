@@ -14,9 +14,10 @@
 
 void	swap(t_list **lst)
 {
-	void	*tmp_1;
+	t_list	*tmp;
 
-	tmp_1 = ;
-	(*lst) = (*lst)->next;
-
+	tmp = (*lst)->next;
+	(*lst)->next = (*lst)->next->next;
+	tmp->next = *lst;
+	*lst = tmp;
 }
