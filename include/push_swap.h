@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/09 16:26:20 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/10 15:07:22 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,10 @@ void	swap(t_list **lst);
 void	push(t_list **lst_a, t_list **lst_b);
 void	rotate(t_list **lst);
 void	rev_rotate(t_list **lst);
-void	sort_1(t_list **lst_a, t_list **lst_b);
+void	bubble_sort(t_list **lst_a, t_list **lst_b);
+void	quick_sort(t_list **lst_a, t_list **lst_b);
+int		lst_average(t_list *lst);
+int		lst_average_rest(t_list *lst);
+int		lst_median(t_list *lst);
 
 #endif
