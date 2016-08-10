@@ -32,5 +32,5 @@ int		lst_average(t_list *lst);
 int		lst_average_rest(t_list *lst);
 int		lst_median(t_list *lst);
 int		check_asc(t_list *lst);
-
+int		uni_sort(t_list *lst_a, t_list *lst_b);
 #endif

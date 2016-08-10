@@ -23,12 +23,10 @@ void	quick_sort(t_list **lst_a, t_list **lst_b)
 	i = 0;
 	while (i < nb_link)
 	{
-		if (((t_pile*)((*lst_a)->content))->val >= median)
+		if (((t_pile*)((*lst_a)->content))->val < median)
 			push(lst_a, lst_b);
 		else
 			rotate(lst_a);
 		i++;
 	}
-	//while (*lst_a)
-	//	push(lst_a, lst_b);
 }
