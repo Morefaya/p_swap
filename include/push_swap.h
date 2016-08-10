@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/10 15:07:22 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/10 20:54:03 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	quick_sort(t_list **lst_a, t_list **lst_b);
 int		lst_average(t_list *lst);
 int		lst_average_rest(t_list *lst);
 int		lst_median(t_list *lst);
+int		check_asc(t_list *lst);
 
 #endif
