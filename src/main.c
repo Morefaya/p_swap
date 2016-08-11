@@ -21,22 +21,22 @@ void	del_content(t_pile *content, size_t size)
 int		main(int ac, char **av)
 {
 	t_list	*lst_a;
-	t_list	*lst_b;
+	t_list	*lst_b;;
 
 	lst_a = NULL;
 	lst_b = NULL;
 	if (!(lst_a = lst_tab2d(ac, av)))
 		return (1);
 
-	//print_lst(lst_a);
-	//print_lst(lst_b);
-
-	quick_sort(&lst_a, &lst_b);
+	print_lst(lst_a);
+	print_lst(lst_b);
+	lst_b = ft_lstcpy(lst_a, sizeof(t_pile));
+	//quick_sort(&lst_a, &lst_b);
 	//ft_putnbr(check_asc(lst_a));
 	print_lst(lst_a);
 	print_lst(lst_b);
-	ft_putchar('\n');
-	ft_putnbr(uni_sort(lst_a, lst_b));
+	//ft_putchar('\n');
+	//ft_putnbr(uni_sort(lst_a, lst_b));
 
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
