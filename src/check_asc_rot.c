@@ -9,7 +9,7 @@ int	check_asc_rot(t_list *lst)
 
 	i = 0;
 	nb_link = ft_lstcount(lst);
-	if (!(tmp = ft_lstcpy(lst, cpy, sizeof(t_pile))))
+	if (!(tmp = ft_lstcpy(lst, sizeof(t_pile))))
 		return (0);
 	while (!(ret = check_asc(tmp)) && i++ < nb_link)
 		rotate(&tmp);

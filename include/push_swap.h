@@ -27,10 +27,13 @@ void	push(t_list **lst_a, t_list **lst_b);
 void	rotate(t_list **lst);
 void	rev_rotate(t_list **lst);
 void	bubble_sort(t_list **lst_a, t_list **lst_b);
-void	quick_sort(t_list **lst_a, t_list **lst_b);
+int	quick_sort(t_list **lst_a, t_list **lst_b, int opt);
 int		lst_average(t_list *lst);
 int		lst_average_rest(t_list *lst);
 int		lst_median(t_list *lst);
 int		check_asc(t_list *lst);
+int		check_asc_rot(t_list *lst);
 int		uni_sort(t_list *lst_a, t_list *lst_b);
+void		del_content(void *content, size_t content_size);
+void		snd_step(t_list **lst, int opt);
 #endif

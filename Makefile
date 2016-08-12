@@ -1,7 +1,8 @@
 CC = gcc
 CFLAG = -Wall -Wextra -Werror
 SRC = main.c lst_tab2d.c print_lst.c swap.c push.c rotate.c rev_rotate.c\
-bubble_sort.c quick_sort.c lst_average.c lst_median.c check_asc.c uni_sort.c
+bubble_sort.c quick_sort.c lst_average.c lst_median.c check_asc.c uni_sort.c\
+check_asc_rot.c snd_step.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(patsubst %.c, %.o, $(SRC))
