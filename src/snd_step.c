@@ -4,30 +4,28 @@ void		snd_step(t_list **lst, int opt)
 {
 	int	nb_link;
 	int	i;
+	int	value;
+	int	value_next;
+	int	low;
 
-	i = 1;
+	i = 0;
 	nb_link = ft_lstcount(*lst);
-	while (i < nb_link / 2)
-	{
-		if (((((t_pile*)(*lst)->content))->val < \
-			(((t_pile*)(*lst)->next->content))->val && !opt)
-			|| ((((t_pile*)(*lst)->content))->val > \
-			(((t_pile*)(*lst)->next->content))->val && opt))
-			swap(lst);
-		rotate(lst);
-		i++;
-	}
+	low = (((t_pile*)(*lst)->content))->val;
 	rotate(lst);
-	i = 1;	
-	while (i < nb_link / 2)
+	while ((((t_pile*)(*lst)->content))->val != low)
 	{
-		if (((((t_pile*)(*lst)->content))->val < \
-			(((t_pile*)(*lst)->next->content))->val && !opt)
-			|| ((((t_pile*)(*lst)->content))->val > \
-			(((t_pile*)(*lst)->next->content))->val && opt))
-			swap(lst);
-		rotate(lst);
-		i++;
+		//print_lst(*lst);
+		//ft_putchar('\n');
+		if ((((t_pile*)(*lst)->content))->val < low)
+			low
+		value = (((t_pile*)(*lst)->content))->val;
+		value_next = (((t_pile*)(*lst)->next->content))->val;
+		if (!check_prev(*lst))
+			rev_totate(lst)
+		else if (check_prev(*lst) && check_next(*lst))
+			rotate(lst);
+
 	}
-	rotate(lst);
+	//print_lst(*lst);
+	//ft_putchar('\n');
 }

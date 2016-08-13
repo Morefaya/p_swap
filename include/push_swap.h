@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/10 20:54:03 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/13 16:17:53 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,7 @@ int		check_asc_rot(t_list *lst);
 int		uni_sort(t_list *lst_a, t_list *lst_b);
 void		del_content(void *content, size_t content_size);
 void		snd_step(t_list **lst, int opt);
+int			check_prev(t_list *lst);
+int			check_next(t_list *lst);
+
 #endif
