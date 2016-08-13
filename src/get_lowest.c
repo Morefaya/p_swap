@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstcpy.c                                        :+:      :+:    :+:   */
+/*   get_lowest.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/13 19:16:16 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/13 19:16:19 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/13 18:36:15 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/13 18:43:22 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-t_list	*ft_lstcpy(t_list *lst, size_t c_size)
+int		get_lowest(t_list *lst)
 {
-	t_list	*new_cpy;
-	t_list	*tmp;
-	
+	int		low;
+
 	if (!lst)
-		return (NULL);
-	if (!(new_cpy = ft_lstnew(lst->content, c_size)))
-		return (NULL);
-	lst = lst->next;
+		return (0);
+	low = ((t_pile*)(lst->content))->val;
 	while (lst)
 	{
-		tmp = ft_lstnew(lst->content, c_size);
-		ft_lstadd_back(new_cpy, tmp);
+		if (((t_pile*)(lst->content))->val < low)
+			low = ((t_pile*)(lst->content))->val;
 		lst = lst->next;
 	}
-	return (new_cpy);
+	return (low);
 }

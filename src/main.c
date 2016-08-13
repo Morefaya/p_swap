@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:43:49 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/13 17:45:14 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/13 18:56:00 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@ int		main(int ac, char **av)
 	lst_b = NULL;
 	if (!(lst_a = lst_tab2d(ac, av)))
 		return (1);
+
+	print_lst(lst_a);
+	print_lst(lst_b);
+
 	ret = quick_sort(&lst_a, &lst_b , 1);
 	i = 0;
 	ret = quick_sort(&lst_a, &lst_b, 1);
@@ -39,19 +43,18 @@ int		main(int ac, char **av)
 	while (i++ < ret)
 		push(&lst_a, &lst_b);
 
-	
 //	print_lst(lst_a);
 //	print_lst(lst_b);
 //	ft_putchar('\n');
 
 	snd_step(&lst_a, 1);
-//	snd_step(&lst_b, 0);
+	snd_step(&lst_b, 0);
 
 //	while (lst_b)
 //		push(&lst_b, &lst_a);
 
-//	print_lst(lst_a);
-//	print_lst(lst_b);
+	print_lst(lst_a);
+	print_lst(lst_b);
 
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);

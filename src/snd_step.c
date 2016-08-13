@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   snd_step.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/13 19:19:07 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/13 19:21:40 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 void		snd_step(t_list **lst, int opt)
@@ -12,9 +24,8 @@ void		snd_step(t_list **lst, int opt)
 	while (((check_asc_rot(*lst) != 1) && opt)
 		|| ((check_asc_rot(*lst) != -1) && !opt))
 	{
-		print_lst(*lst);
-		ft_putchar('\n');
-
+		//print_lst(*lst);
+		//ft_putchar('\n');
 		value = (((t_pile*)(*lst)->content))->val;
 		value_next = (((t_pile*)(*lst)->next->content))->val;
 		if ((value > value_next && value != high && opt)
@@ -22,6 +33,7 @@ void		snd_step(t_list **lst, int opt)
 			swap(lst);
 		rotate(lst);
 	}
-	print_lst(*lst);
-	ft_putchar('\n');
+	turn_list(lst);
+	//print_lst(*lst);
+	//ft_putchar('\n');
 }

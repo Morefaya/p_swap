@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/13 18:07:02 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/13 19:20:07 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,6 @@ void		snd_step(t_list **lst, int opt);
 int			check_prev(t_list *lst);
 int			check_next(t_list *lst);
 int			get_highest(t_list *lst);
+int			get_lowest(t_list *lst);
+void		turn_list(t_list **lst);
 #endif
