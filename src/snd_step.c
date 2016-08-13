@@ -21,6 +21,10 @@ void		snd_step(t_list **lst, int opt)
 
 	if (!lst)
 		return ;
+	else if (!*lst)
+		return ;
+	else if (!(*lst)->next)
+		return ;
 	high = get_highest(*lst);
 	low = get_lowest(*lst);
 	while (((check_asc_rot(*lst) != 1) && opt)

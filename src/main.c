@@ -33,20 +33,29 @@ int		main(int ac, char **av)
 	//print_lst(lst_a);
 	//print_lst(lst_b);
 
-	ret = quick_sort(&lst_a, &lst_b , 1);
-	i = 0;
-	ret = quick_sort(&lst_a, &lst_b, 1);
-	while (i++ < ret)
+	if (check_asc_rot(lst_a) == 1)
 	{
-		push(&lst_b, &lst_a);
-		ft_putendl("P");
+		turn_list(&lst_a);
+		print_lst(lst_a);
+		return (0);
 	}
-	i = 0;
-	ret = quick_sort(&lst_b, &lst_a, 0);
-	while (i++ < ret)
+	if (ac > 20)
 	{
-		push(&lst_a, &lst_b);
-		ft_putendl("P");
+		ret = quick_sort(&lst_a, &lst_b , 1);
+		i = 0;
+		ret = quick_sort(&lst_a, &lst_b, 1);
+		while (i++ < ret)
+		{
+			push(&lst_b, &lst_a);
+			ft_putendl("P");
+		}
+		i = 0;
+		ret = quick_sort(&lst_b, &lst_a, 0);
+		while (i++ < ret)
+		{
+			push(&lst_a, &lst_b);
+			ft_putendl("P");
+		}
 	}
 
 //	print_lst(lst_a);
@@ -54,11 +63,11 @@ int		main(int ac, char **av)
 //	ft_putchar('\n');
 
 	snd_step(&lst_a, 1);
-	ft_putchar('q');
 	snd_step(&lst_b, 0);
 
-	while (lst_b)
-		push(&lst_b, &lst_a);
+	if (ac > 20)
+		while (lst_b)
+			push(&lst_b, &lst_a);
 
 	//print_lst(lst_a);
 	//print_lst(lst_b);
