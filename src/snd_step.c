@@ -2,30 +2,26 @@
 
 void		snd_step(t_list **lst, int opt)
 {
-	int	nb_link;
-	int	i;
-	int	value;
-	int	value_next;
-	int	low;
+	int		value;
+	int		value_next;
+	int		high;
+	int		low;
 
-	i = 0;
-	nb_link = ft_lstcount(*lst);
-	low = (((t_pile*)(*lst)->content))->val;
-	rotate(lst);
-	while ((((t_pile*)(*lst)->content))->val != low)
+	high = get_highest(*lst);
+	low = get_lowest(*lst);
+	while (((check_asc_rot(*lst) != 1) && opt)
+		|| ((check_asc_rot(*lst) != -1) && !opt))
 	{
-		//print_lst(*lst);
-		//ft_putchar('\n');
-		if ((((t_pile*)(*lst)->content))->val < low)
-			low
+		print_lst(*lst);
+		ft_putchar('\n');
+
 		value = (((t_pile*)(*lst)->content))->val;
 		value_next = (((t_pile*)(*lst)->next->content))->val;
-		if (!check_prev(*lst))
-			rev_totate(lst)
-		else if (check_prev(*lst) && check_next(*lst))
-			rotate(lst);
-
+		if ((value > value_next && value != high && opt)
+			|| (value < value_next && value != low && !opt))
+			swap(lst);
+		rotate(lst);
 	}
-	//print_lst(*lst);
-	//ft_putchar('\n');
+	print_lst(*lst);
+	ft_putchar('\n');
 }

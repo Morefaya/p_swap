@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/13 16:17:53 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/13 18:07:02 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,5 @@ void		del_content(void *content, size_t content_size);
 void		snd_step(t_list **lst, int opt);
 int			check_prev(t_list *lst);
 int			check_next(t_list *lst);
-
+int			get_highest(t_list *lst);
 #endif
