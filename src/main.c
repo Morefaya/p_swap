@@ -22,15 +22,15 @@ int		main(int ac, char **av)
 {
 	t_list	*lst_a;
 	t_list	*lst_b;
-	int	ret;
-	//int	i;
+	//int	ret;
+	int	i;
 
 	lst_a = NULL;
 	lst_b = NULL;
 	if (!(lst_a = lst_tab2d(ac, av)))
 		return (1);
 
-	print_lst(lst_a);
+	//print_lst(lst_a);
 	//print_lst(lst_b);
 
 	/*if (check_asc_rot(lst_a) == 1)
@@ -39,7 +39,7 @@ int		main(int ac, char **av)
 		print_lst(lst_a);
 		return (0);
 	}*/
-	/*if (ac > 20)
+	/*if (ac)
 	{
 		ret = quick_sort(&lst_a, &lst_b , 1);
 		i = 0;
@@ -57,13 +57,24 @@ int		main(int ac, char **av)
 			ft_putendl("P");
 		}
 	}*/
-
-//	print_lst(lst_a);
-//	print_lst(lst_b);
-//	ft_putchar('\n');
-
-	while (check_asc_rot(lst_a) != 1)
+	/*i = 0;
+	while (i++ < 4)
 	{
+		print_lst(lst_a);
+		print_lst(lst_b);
+		ft_putchar('\n');
+		rev_rotate(&lst_a);
+		push(&lst_a, &lst_b);
+	}
+	while (lst_b)
+		push(&lst_b, &lst_a);
+	print_lst(lst_a);
+	print_lst(lst_b);
+	ft_putchar('\n');*/
+
+	/*while (check_asc_rot(lst_a) != 1)
+	{
+		print_lst(lst_a);
 		do_op(&lst_a, (ret = asc_sort(&lst_a)));
 		if (ret == S)
 			ft_putendl("sa");
@@ -82,16 +93,27 @@ int		main(int ac, char **av)
 	{
 		while (ret++)
 			ft_putendl("rra");
-	}
+	}*/
+//	print_lst(lst_a);
 //	snd_step(&lst_a, 1);
 //	snd_step(&lst_b, 0);
 
 	/*if (ac > 20)
 		while (lst_b)
 			push(&lst_b, &lst_a);*/
-
+	i = 0;
+	while (i++ < 18)
+	{
+		hard_sort(&lst_a, &lst_b);
+		print_lst(lst_a);
+		if (ft_lstcount(lst_a) == 2)
+			break ;
+	}
+	while (lst_b)
+		push(&lst_b, &lst_a);
 	print_lst(lst_a);
-	//print_lst(lst_b);
+	print_lst(lst_b);
+//	print_lst(lst_b);
 
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);

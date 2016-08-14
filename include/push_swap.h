@@ -49,4 +49,6 @@ int		turn_list(t_list **lst);
 int		check_prevnext(t_list *lst);
 int		asc_sort(t_list **lst);
 void		do_op(t_list **lst, int op_num);
+int		where_is(t_list *lst, int num);
+void		hard_sort(t_list **lst_a, t_list **lst_b);
 #endif
