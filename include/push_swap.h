@@ -15,6 +15,11 @@
 
 # include "libft.h"
 
+# define N 0
+# define S 1
+# define R 2
+# define REV 3
+
 typedef struct	s_pile
 {
 	int			val;
@@ -40,5 +45,8 @@ int			check_prev(t_list *lst);
 int			check_next(t_list *lst);
 int			get_highest(t_list *lst);
 int			get_lowest(t_list *lst);
-void		turn_list(t_list **lst);
+int		turn_list(t_list **lst);
+int		check_prevnext(t_list *lst);
+int		asc_sort(t_list **lst);
+void		do_op(t_list **lst, int op_num);
 #endif

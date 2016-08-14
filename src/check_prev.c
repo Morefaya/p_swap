@@ -9,7 +9,7 @@ int		check_prev(t_list *lst)
 	tmp = ((t_pile*)(lst->content))->val;
 	while (lst->next)
 		lst = lst->next;
-	if (tmp < ((t_pile*)(lst->content))->val)
+	if (tmp > ((t_pile*)(lst->content))->val)
 		return (1);
 	else
 		return (0);
