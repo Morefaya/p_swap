@@ -23,7 +23,7 @@ int		main(int ac, char **av)
 	t_list	*lst_a;
 	t_list	*lst_b;
 	//int	ret;
-	int	i;
+	//int	i;
 
 	lst_a = NULL;
 	lst_b = NULL;
@@ -101,19 +101,37 @@ int		main(int ac, char **av)
 	/*if (ac > 20)
 		while (lst_b)
 			push(&lst_b, &lst_a);*/
-	i = 0;
-	while (i++ < 18)
+	/*print_lst(lst_a);
+	print_lst(lst_b);
+	ft_putchar('\n');*/
+	while (42)
 	{
-		hard_sort(&lst_a, &lst_b);
-		print_lst(lst_a);
 		if (ft_lstcount(lst_a) == 2)
+		{
+			if (check_next(lst_a))
+			{
+				swap(&lst_a);
+				ft_putendl("sa");
+				/*print_lst(lst_a);
+				print_lst(lst_b);
+				ft_putchar('\n');*/
+
+			}
 			break ;
+		}
+		hard_sort(&lst_a, &lst_b);
+		/*print_lst(lst_a);
+		print_lst(lst_b);
+		ft_putchar('\n');*/
 	}
 	while (lst_b)
+	{
 		push(&lst_b, &lst_a);
-	print_lst(lst_a);
-	print_lst(lst_b);
-//	print_lst(lst_b);
+		ft_putendl("pa");
+		/*print_lst(lst_a);
+		print_lst(lst_b);
+		ft_putchar('\n');*/
+	}
 
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);

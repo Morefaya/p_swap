@@ -11,12 +11,12 @@ void	hard_sort(t_list **lst_a, t_list **lst_b)
 		return ;
 	else if (!*lst_a)
 		return ;
-	if (ft_lstcount(*lst_a) == 2)
+	/*if (ft_lstcount(*lst_a) == 2)
 	{
 		if (check_next(*lst_a))
 			swap(lst_a);
 		return ;
-	}
+	}*/
 	low = get_lowest(*lst_a);
 	rot = where_is(*lst_a, low);
 	value = ((t_pile*)((*lst_a)->content))->val;
@@ -31,11 +31,13 @@ void	hard_sort(t_list **lst_a, t_list **lst_b)
 	{
 		rotate(lst_a);
 		ft_putendl("ra");
+		return ;
 	}
 	else
 	{
 		rev_rotate(lst_a);
-		ft_putendl("rra");	
+		ft_putendl("rra");
+		return ;
 	}
 	if (value > value_next)
 	{
