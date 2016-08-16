@@ -22,6 +22,7 @@ void	hard_sort(t_list **lst_a, t_list **lst_b)
 	{
 		rev_rotate(lst_a);
 		ft_putendl("rra");
+		swaping_sort(lst_a);
 	}
-	swaping_sort(lst_a);
+	//swaping_sort(lst_a);
 }
