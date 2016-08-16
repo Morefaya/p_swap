@@ -14,5 +14,8 @@ int	double_val(int *tab, int i);
 int	max_int(int value, char *str);
 int	check_nbr(int ac, char **av, int *tab);
 void	print_op(t_list *lst);
+t_list	*get_op_lst(void);
+t_list	*lst_inttab(int *tab, int len);
+void	do_op(t_list **lst_a, t_list *op_lst);
 
 #endif

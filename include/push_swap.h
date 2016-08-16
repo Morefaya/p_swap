@@ -48,10 +48,10 @@ int			get_lowest(t_list *lst);
 int		turn_list(t_list **lst);
 int		check_prevnext(t_list *lst);
 int		asc_sort(t_list **lst);
-void		do_op(t_list **lst, int op_num);
 int		where_is(t_list *lst, int num);
 void		hard_sort(t_list **lst_a, t_list **lst_b);
 void		swaping_sort(t_list **lst);
 void		end_push(t_list **lst_a, t_list **lst_b);
 void		main_sort(t_list **lst_a, t_list **lst_b);
+void		del_content(void *content, size_t size);
 #endif

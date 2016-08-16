@@ -7,8 +7,11 @@ int	double_val(int *tab, int i)
 
 	j = 0;
 	val = tab[i];
-	while (i-- >= 0)
+	i--;
+	while (i >= 0)
+	{
 		if (tab[i] == val)
 			return (1);
+	}
 	return (0);
 }

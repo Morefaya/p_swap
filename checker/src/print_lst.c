@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   print_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 20:43:49 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/13 20:06:58 by jcazako          ###   ########.fr       */
+/*   Created: 2016/06/01 18:04:31 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/09 13:08:36 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int		main(int ac, char **av)
+void	print_lst(t_list *lst)
 {
-	t_list	*lst_a;
-	t_list	*lst_b;
-
-	lst_a = NULL;
-	lst_b = NULL;
-	if (!(lst_a = lst_tab2d(ac, av)))
-		return (1);
-	main_sort(&lst_a, &lst_b);	
-	end_push(&lst_a, &lst_b);
-	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
-	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
-	return (0);
+	while (lst)
+	{
+		ft_putnbr(((t_pile*)(lst->content))->val);
+		ft_putchar('\t');
+		lst = lst->next;
+	}
+	ft_putchar('\n');
 }

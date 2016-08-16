@@ -3,8 +3,8 @@ CFLAG = -Wall -Wextra -Werror
 SRC = main.c lst_tab2d.c print_lst.c swap.c push.c rotate.c rev_rotate.c\
 bubble_sort.c quick_sort.c lst_average.c lst_median.c check_asc.c uni_sort.c\
 check_asc_rot.c snd_step.c check_prev.c check_next.c get_highest.c get_lowest.c\
-turn_list.c check_prevnext.c asc_sort.c do_op.c where_is.c hard_sort.c\
-swaping_sort.c end_push.c main_sort.c
+turn_list.c check_prevnext.c asc_sort.c where_is.c hard_sort.c\
+swaping_sort.c end_push.c main_sort.c del_content.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(patsubst %.c, %.o, $(SRC))
