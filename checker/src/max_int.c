@@ -7,7 +7,6 @@ int	max_int(int value, char *str)
 
 	i = 0;
 	j = 0;
-	(void)value;
 	while (str[i] && ft_strchr(" \t\n", str[i]))
 		i++;
 	if (str[i] && ft_strchr("+-", str[i]))

@@ -12,6 +12,7 @@ int	double_val(int *tab, int i)
 	{
 		if (tab[i] == val)
 			return (1);
+		i--;
 	}
 	return (0);
 }

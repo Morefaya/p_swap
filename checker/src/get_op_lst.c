@@ -19,5 +19,6 @@ t_list	*get_op_lst(void)
 			return (NULL);
 		ft_lstadd_back(op_lst, tmp);
 	}
+	free(line);
 	return (op_lst);
 }
