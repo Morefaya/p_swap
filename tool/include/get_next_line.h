@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/16 18:09:02 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/17 20:58:50 by jcazako          ###   ########.fr       */
+/*   Created: 2016/01/27 13:41:06 by jcazako           #+#    #+#             */
+/*   Updated: 2016/01/30 18:42:18 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+# define BUFF_SIZE 1024
 
-void	quick_sort(t_list **lst_a, t_list **lst_b)
+# include <unistd.h>
+# include <stdlib.h>
+# include "libft.h"
+
+typedef struct	s_gnl
 {
-	int		median;
-	int		nb_link;
-	int		i;
+	int			fd;
+	char		*str;
+}				t_gnl;
 
-	i = 0;
-	median = lst_median(*lst_a);
-	nb_link = ft_lstcount(*lst_a);
-	while (i < nb_link / 2)
-	{
-		if (((t_pile*)((*lst_a)->content))->val < median)
-		{
-			push(lst_a, lst_b);
-			i++;
-		}
-		else
-			rotate(lst_a);
-		print_lst(*lst_a);
-		print_lst(*lst_b);
-		ft_putchar('\n');
-	}
-}
+int				get_next_line(const int fd, char **line);
+
+#endif

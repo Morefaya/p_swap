@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   print_lst.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/16 18:09:02 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/17 20:58:50 by jcazako          ###   ########.fr       */
+/*   Created: 2016/06/01 18:04:31 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/09 13:08:36 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	quick_sort(t_list **lst_a, t_list **lst_b)
+void	print_lst(t_list *lst)
 {
-	int		median;
-	int		nb_link;
-	int		i;
-
-	i = 0;
-	median = lst_median(*lst_a);
-	nb_link = ft_lstcount(*lst_a);
-	while (i < nb_link / 2)
+	while (lst)
 	{
-		if (((t_pile*)((*lst_a)->content))->val < median)
-		{
-			push(lst_a, lst_b);
-			i++;
-		}
-		else
-			rotate(lst_a);
-		print_lst(*lst_a);
-		print_lst(*lst_b);
-		ft_putchar('\n');
+		ft_putnbr(((t_pile*)(lst->content))->val);
+		ft_putchar('\t');
+		lst = lst->next;
 	}
+	ft_putchar('\n');
 }
