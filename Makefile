@@ -1,23 +1,12 @@
 CC = gcc
 CFLAG = -Wall -Wextra -Werror
-SRC = main.c lst_tab2d.c print_lst.c swap.c push.c rotate.c rev_rotate.c\
-bubble_sort.c danm_sort.c lst_average.c lst_median.c check_asc.c uni_sort.c\
-check_asc_rot.c snd_step.c check_prev.c check_next.c get_highest.c get_lowest.c\
-turn_list.c check_prevnext.c asc_sort.c where_is.c hard_sort.c\
-swaping_sort.c end_push.c main_sort.c del_content.c quick_sort.c
-SRC_DIR = ./src
-SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
-OBJ = $(patsubst %.c, %.o, $(SRC))
-OBJ_DIR = ./obj
-OBJ_O = $(patsubst %, $(OBJ_DIR)/%, $(OBJ))
-HDIR = include
+CHECK_DIR = check_dir
+SWAP_DIR = swap_dir
 LIB = libft/libft.a
-L_H = -L libft -lft
-FILE = 
-NAME = push_swap
-.PHONY: re run rr clean fclean all
 
-all: $(LIB) $(NAME)
+.PHONY: re clean fclean all checker push_swap
+
+all: $(LIB) checker push_swap
 
 %.a:
 	@make -C $(dir $@)
@@ -25,28 +14,21 @@ all: $(LIB) $(NAME)
 clean_lib:
 	@make fclean -C libft
 
-$(NAME): $(OBJ_DIR) $(OBJ_O)
-	@$(CC) -o $@ -I $(HDIR) $(L_H) $(OBJ_O) $(CFLAG)
-	@echo "\033[32m$(NAME) done\033[0m"
+checker:
+	@make -C $(CHECK_DIR)
 
-$(OBJ_DIR):
-	@mkdir $(OBJ_DIR)
-
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@$(CC) -c $< -o $@ -I $(HDIR) $(CFLAG)
+push_swap:
+	@make -C $(SWAP_DIR)
 
 clean:
-	@rm -rf $(OBJ_O)
+	@make clean -C $(CHECK_DIR)
+	@make clean -C $(SWAP_DIR)
 	@echo "\033[31mobject files removed\033[0m"
 
-fclean: clean clean_lib
-	@rm -rf $(NAME)
-	@rm -rf $(OBJ_DIR)
-	@echo "\033[31m$(NAME) removed\033[0m"
+fclean: clean_lib clean
+	@make fclean -C $(CHECK_DIR)
+	@echo "\033[31mchecker removed\033[0m"
+	@make fclean -C $(SWAP_DIR)
+	@echo "\033[31mpush_swap removed\033[0m"
 
 re: fclean all
-
-run:
-	@./$(NAME) $(FILE) | cat -e
-
-rr: re run

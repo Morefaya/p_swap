@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 18:27:44 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/08 21:48:29 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/17 18:04:10 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@
 
 typedef struct		s_list
 {
-	void		*content;
-	size_t		content_size;
+	void			*content;
+	size_t			content_size;
 	struct s_list	*next;
-}			t_list;
+}					t_list;
 
 void			ft_putchar(char a);
 void			ft_putstr(const char *str);
