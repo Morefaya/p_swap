@@ -1,23 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/17 17:32:07 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/17 17:36:10 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
-int	puterror(int *tab, int ret)
+int			puterror(int *tab, int ret)
 {
 	free(tab);
 	ft_putendl_fd("Error", 2);
 	return (ret);
 }
 
-void	del_op(void *content, size_t size)
+void		del_op(void *content, size_t size)
 {
 	free(((t_op*)(content))->op);
 	ft_bzero(content, size);
 	free(content);
 }
 
-int	main(int ac, char **av)
+static void	print_result(t_list *lst)
 {
-	int	*tab;
-	int	ret;
+	if (check_asc(lst) == 1)
+		ft_putendl("OK");
+	else
+		ft_putendl("KO");
+}
+
+int			main(int ac, char **av)
+{
+	int		*tab;
+	int		ret;
 	t_list	*op_lst;
 	t_list	*lst_a;
 	t_list	*lst_b;
@@ -34,10 +54,7 @@ int	main(int ac, char **av)
 		return (1);
 	lst_b = NULL;
 	do_op(&lst_a, &lst_b, op_lst);
-	if (check_asc(lst_a) == 1)
-		ft_putendl("OK");
-	else
-		ft_putendl("KO");
+	print_result(lst_a);
 	ft_lstdel(&op_lst, (void(*)(void*, size_t))del_op);
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);

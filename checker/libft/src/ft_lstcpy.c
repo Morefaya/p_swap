@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/13 19:16:16 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/13 19:16:19 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/17 17:37:24 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstcpy(t_list *lst, size_t c_size)
 {
 	t_list	*new_cpy;
 	t_list	*tmp;
-	
+
 	if (!lst)
 		return (NULL);
 	if (!(new_cpy = ft_lstnew(lst->content, c_size)))

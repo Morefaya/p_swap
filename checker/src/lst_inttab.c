@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   lst_inttab.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/17 17:31:09 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/17 17:31:26 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 t_list	*lst_inttab(int *tab, int len)
@@ -5,7 +17,7 @@ t_list	*lst_inttab(int *tab, int len)
 	t_list	*lst_a;
 	t_list	*tmp;
 	t_pile	content;
-	int	i;
+	int		i;
 
 	i = 0;
 	content.val = tab[0];
