@@ -4,7 +4,7 @@ SRC = main.c lst_tab2d.c print_lst.c swap.c push.c rotate.c rev_rotate.c\
 bubble_sort.c danm_sort.c lst_average.c lst_median.c check_asc.c uni_sort.c\
 check_asc_rot.c snd_step.c check_prev.c check_next.c get_highest.c get_lowest.c\
 turn_list.c check_prevnext.c asc_sort.c where_is.c hard_sort.c\
-swaping_sort.c end_push.c main_sort.c del_content.c quick_sort.c
+swaping_sort.c end_push.c main_sort.c del_content.c quick_sort.c lst_trans.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(SRC:.c=.o)
@@ -37,10 +37,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	@rm -rf $(OBJ_O)
+	@echo "\033[31mobject files removed\033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf $(OBJ_DIR)
+	@echo "\033[31mpush_swap deleted\033[0m"
 
 re: fclean all
 

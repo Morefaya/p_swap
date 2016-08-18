@@ -1,33 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   max_int.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/08 20:43:49 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/17 21:21:09 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/17 17:25:04 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/17 17:29:41 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tool.h"
 
-int		main(int ac, char **av)
+int	max_int(int value, char *str)
 {
-	t_list	*lst_a;
-	t_list	*lst_b;
+	int	i;
+	int	j;
 
-	lst_a = NULL;
-	lst_b = NULL;
-	if (!(lst_a = check_nbr(ac, av)))
+	i = 0;
+	j = 0;
+	while (str[i] && ft_strchr(" \t\n", str[i]))
+		i++;
+	if (str[i] && ft_strchr("+-", str[i]))
+		i++;
+	while (str[i] == '0')
+		i++;
+	while (str[i + j] && ft_strchr("0123456789", str[i + j]))
+		j++;
+	if ((value < 0 && !ft_strchr(str, '-'))
+		|| (value > 0 && ft_strchr(str, '-'))
+		|| j > 10)
 		return (1);
-	print_lst(lst_a);
-	print_lst(lst_b);
-	ft_putchar('\n');
-
-	do_op(&lst_a, &lst_b);
-
-	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
-	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
 	return (0);
 }

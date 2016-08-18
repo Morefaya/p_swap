@@ -25,8 +25,11 @@ int		main(int ac, char **av)
 	print_lst(lst_b);
 	ft_putchar('\n');
 
-	quick_sort(&lst_a, &lst_b);
+	//quick_sort(&lst_a, &lst_b);
+	lst_trans(&lst_a, -3);
 
+	print_lst(lst_a);
+	print_lst(lst_b);
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
 	return (0);

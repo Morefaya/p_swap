@@ -10,13 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "tool.h"
 
-static void	operate_2(t_list **lst_a, t_list **lst_b, t_list *op_lst)
+static void	operate_2(t_list **lst_a, t_list **lst_b, char *op)
 {
-	char	*op;
-
-	op = ((t_op*)(op_lst->content))->op;
 	if (!ft_strcmp("ra", op))
 		rotate(lst_a);
 	else if (!ft_strcmp("rb", op))
@@ -35,13 +32,12 @@ static void	operate_2(t_list **lst_a, t_list **lst_b, t_list *op_lst)
 		rev_rotate(lst_a);
 		rev_rotate(lst_b);
 	}
+	else
+		ft_putendl_fd("invalid instructions", 2);
 }
 
-static void	operate_1(t_list **lst_a, t_list **lst_b, t_list *op_lst)
+static void	operate_1(t_list **lst_a, t_list **lst_b, char *op)
 {
-	char	*op;
-
-	op = ((t_op*)(op_lst->content))->op;
 	if (!ft_strcmp("sa", op))
 		swap(lst_a);
 	else if (!ft_strcmp("sb", op))
@@ -56,14 +52,26 @@ static void	operate_1(t_list **lst_a, t_list **lst_b, t_list *op_lst)
 	else if (!ft_strcmp("pb", op))
 		push(lst_a, lst_b);
 	else
-		operate_2(lst_a, lst_b, op_lst);
+		operate_2(lst_a, lst_b, op);
 }
 
-void		do_op(t_list **lst_a, t_list **lst_b, t_list *op_lst)
+void		do_op(t_list **lst_a, t_list **lst_b)
 {
-	while (op_lst)
+	char	*line;
+	int	i;
+
+	i = 0;
+	while (get_next_line(0, &line))
 	{
-		operate_1(lst_a, lst_b, op_lst);
-		op_lst = op_lst->next;
+		operate_1(lst_a, lst_b, line);
+		print_lst(*lst_a);
+		print_lst(*lst_b);
+		ft_putchar('\n');
+		free(line);
+		i++;
 	}
+	free(line);
+	ft_putstr("\t\t\t\t\t\t\t\tnbre d'operation: ");
+	ft_putnbr(i);
+	ft_putchar('\n');
 }
