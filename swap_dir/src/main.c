@@ -21,12 +21,18 @@ int		main(int ac, char **av)
 	lst_b = NULL;
 	if (!(lst_a = lst_tab2d(ac, av)))
 		return (1);
+
 	print_lst(lst_a);
 	print_lst(lst_b);
 	ft_putchar('\n');
+	quick_sort(&lst_a, &lst_b);
 
-	//quick_sort(&lst_a, &lst_b);
-	lst_trans(&lst_a, -3);
+	print_lst(lst_a);
+	print_lst(lst_b);
+	ft_putchar('\n');
+	jc_sort(&lst_a);
+	ft_putchar('\n');
+	jc_sort(&lst_b);
 
 	print_lst(lst_a);
 	print_lst(lst_b);

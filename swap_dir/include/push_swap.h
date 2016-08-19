@@ -56,4 +56,5 @@ void			main_sort(t_list **lst_a, t_list **lst_b);
 void			del_content(void *content, size_t size);
 void			quick_sort(t_list **lst_a, t_list **lst_b);
 void			lst_trans(t_list **lst, int range);
+int			jc_sort(t_list **lst);
 #endif

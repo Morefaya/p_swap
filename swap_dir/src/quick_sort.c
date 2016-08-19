@@ -26,12 +26,13 @@ void	quick_sort(t_list **lst_a, t_list **lst_b)
 		if (((t_pile*)((*lst_a)->content))->val < median)
 		{
 			push(lst_a, lst_b);
+			//ft_putendl("pb");
 			i++;
 		}
 		else
+		{
 			rotate(lst_a);
-		print_lst(*lst_a);
-		print_lst(*lst_b);
-		ft_putchar('\n');
+			//ft_putendl("ra");
+		}
 	}
 }
