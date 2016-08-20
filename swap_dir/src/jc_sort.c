@@ -4,17 +4,28 @@ static void	help_low(t_list **lst, int high, int asc)
 {
 	if (get_next(*lst) == high)
 	{
-		ft_putchar('a');
+		//ft_putchar('a');
 		if (asc)
 		{
-			ft_putchar('b');
+			//ft_putchar('b');
 			swap(lst);
+			rotate(lst);
+		}
+		else
+		{
+			//ft_putchar('B');
 			rotate(lst);
 		}
 	}
 	else if (get_prev(*lst) == high)
 	{
-		ft_putchar('c');
+		//ft_putchar('c');
+		if (!asc)
+		{
+			rev_rotate(lst);
+			swap(lst);
+			rotate(lst);
+		}
 	}
 }
 
@@ -22,29 +33,37 @@ static void	help_high(t_list **lst, int low, int asc)
 {
 	if (get_next(*lst) == low)
 	{
-		ft_putchar('d');
+		//ft_putchar('d');
 		if (!asc)
 		{
+		//	ft_putchar('D');
 			swap(lst);
 			rotate(lst);
 		}
 		else if (asc)
+		{
+		//	ft_putchar('e');
 			rotate(lst);
+		}
 	}
 	else if (get_prev(*lst) == low)
 	{
-		ft_putchar('e');
+		//ft_putchar('f');
 		if (asc)
 		{
-			ft_putchar('f');
+		//	ft_putchar('g');
 			rev_rotate(lst);
 			swap(lst);
 			rotate(lst); //facultative
 		}
+		else
+		{
+		//	ft_putchar('h');
+		}
 	}
 }
 
-int		jc_sort(t_list **lst)
+int		jc_sort(t_list **lst, int asc)
 {
 	int	high;
 	int	low;
@@ -68,12 +87,12 @@ int		jc_sort(t_list **lst)
 	if (rot == r_low)
 	{
 		lst_trans(lst, where_is(*lst, high));
-		help_low(lst, high, 1);
+		help_low(lst, high, asc);
 	}
 	else if (rot == r_high)
 	{
 		lst_trans(lst, where_is(*lst, low));
-		help_high(lst, low, 1);
+		help_high(lst, low, asc);
 	}
 	return (0);
 }

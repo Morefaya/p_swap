@@ -30,9 +30,10 @@ int		main(int ac, char **av)
 	print_lst(lst_a);
 	print_lst(lst_b);
 	ft_putchar('\n');
-	jc_sort(&lst_a);
+	jc_sort(&lst_a, 1);
 	ft_putchar('\n');
-	jc_sort(&lst_b);
+	jc_sort(&lst_b, 0);
+	ft_putchar('\n');
 
 	print_lst(lst_a);
 	print_lst(lst_b);
