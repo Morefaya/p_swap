@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/17 18:02:43 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/20 17:40:13 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,12 @@ void			main_sort(t_list **lst_a, t_list **lst_b);
 void			del_content(void *content, size_t size);
 void			quick_sort(t_list **lst_a, t_list **lst_b);
 void			lst_trans(t_list **lst, int range);
-int			jc_sort(t_list **lst, int asc);
-int			get_next(t_list *lst);
-int			get_prev(t_list *lst);
-
+int				jc_sort(t_list **lst, int asc);
+int				get_next(t_list *lst);
+int				get_prev(t_list *lst);
+int				get_higher(t_list *lst, int val);
+int				get_lower(t_list *lst, int val);
+int				count_low(t_list *lst, int val);
+int				count_high(t_list *lst, int val);
+void			range_sort(t_list **lst, int asc);
 #endif

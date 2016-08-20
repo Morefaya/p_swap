@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:43:49 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/16 19:59:18 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/20 17:39:33 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ int		main(int ac, char **av)
 
 	print_lst(lst_a);
 	print_lst(lst_b);
+	ft_putchar('\n');
+
+	range_sort(&lst_a, 1);
+	print_lst(lst_a);
+	/*ft_putnbr(get_higher(lst_a, 9));
+	ft_putchar('\n');
+	ft_putnbr(get_lower(lst_b, 5));
+	ft_putchar('\n');*/
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
 	return (0);
