@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:43:49 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/20 17:39:33 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/20 19:33:34 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,22 @@ int		main(int ac, char **av)
 	ft_putchar('\n');
 	quick_sort(&lst_a, &lst_b);
 
-	print_lst(lst_a);
-	print_lst(lst_b);
-	ft_putchar('\n');
+	//print_lst(lst_a);
+	//print_lst(lst_b);
+	//ft_putchar('\n');
 	jc_sort(&lst_a, 1);
-	ft_putchar('\n');
-	jc_sort(&lst_b, 0);
-	ft_putchar('\n');
+	//ft_putchar('\n');
+	jc_sort(&lst_b, 1);
+	//ft_putchar('\n');
 
 	print_lst(lst_a);
 	print_lst(lst_b);
 	ft_putchar('\n');
 
 	range_sort(&lst_a, 1);
+	range_sort(&lst_a, 1);
 	print_lst(lst_a);
+	print_lst(lst_b);
 	/*ft_putnbr(get_higher(lst_a, 9));
 	ft_putchar('\n');
 	ft_putnbr(get_lower(lst_b, 5));
