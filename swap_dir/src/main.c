@@ -22,19 +22,23 @@ int		main(int ac, char **av)
 	if (!(lst_a = lst_tab2d(ac, av)))
 		return (1);
 
-	print_lst(lst_a);
+	/*print_lst(lst_a);
 	print_lst(lst_b);
-	ft_putchar('\n');
+	ft_putchar('\n');*/
 	quick_sort(&lst_a, &lst_b);
 
 	jc_sort(&lst_a, 1);
-	jc_sort(&lst_b, 1);
+	jc_sort(&lst_b, 0);
 
 	print_lst(lst_a);
 	print_lst(lst_b);
 	ft_putchar('\n');
-	range_sort_dsc(&lst_a);
+	range_sort_asc(&lst_a);
 	range_sort_dsc(&lst_b);
+	turn_list(&lst_a);
+	turn_list(&lst_b);
+	while (lst_b)
+		push(&lst_b, &lst_a);
 	print_lst(lst_a);
 	print_lst(lst_b);
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);

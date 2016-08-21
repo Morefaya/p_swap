@@ -66,32 +66,27 @@ void	range_sort_dsc(t_list **lst)
 	lowest = get_lowest(*lst);
 	while (check_asc_rot(*lst) != -1)
 	{
-		ft_putendl("A");
-		while (!check_asc_rot(*lst))
+		while (check_asc_rot(*lst) != -1)
 		{
 			if (!check_next(*lst) \
-				&& (((t_pile*)(*lst)->content))->val != highest
 				&& (((t_pile*)(*lst)->content))->val != lowest)
 				swap(lst);
 			lim_low = get_limit_low(*lst);
 			if (((t_pile*)((*lst)->content))->val <= lim_low)
 				break ;
 			rotate(lst);
-			print_lst(*lst);
-			ft_putendl("Z");
+			//print_lst(*lst);
 		}
-		while (!check_asc_rot(*lst))
+		while (check_asc_rot(*lst) != -1)
 		{
 			if (!check_next(*lst) \
-				&& (((t_pile*)(*lst)->content))->val != highest
 				&& (((t_pile*)(*lst)->content))->val != lowest)
 				swap(lst);
 			lim_high = get_limit_high(*lst);
 			if (((t_pile*)((*lst)->content))->val >= lim_high)
 				break ;
 			rev_rotate(lst);
-			print_lst(*lst);
-			ft_putendl("E");
+			//print_lst(*lst);
 		}
 	}
 }
