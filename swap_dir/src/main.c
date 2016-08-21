@@ -27,26 +27,16 @@ int		main(int ac, char **av)
 	ft_putchar('\n');
 	quick_sort(&lst_a, &lst_b);
 
-	//print_lst(lst_a);
-	//print_lst(lst_b);
-	//ft_putchar('\n');
 	jc_sort(&lst_a, 1);
-	//ft_putchar('\n');
 	jc_sort(&lst_b, 1);
-	//ft_putchar('\n');
 
 	print_lst(lst_a);
 	print_lst(lst_b);
 	ft_putchar('\n');
-
-	range_sort(&lst_a, 1);
-	range_sort(&lst_a, 1);
+	range_sort_dsc(&lst_a);
+	range_sort_dsc(&lst_b);
 	print_lst(lst_a);
 	print_lst(lst_b);
-	/*ft_putnbr(get_higher(lst_a, 9));
-	ft_putchar('\n');
-	ft_putnbr(get_lower(lst_b, 5));
-	ft_putchar('\n');*/
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
 	return (0);

@@ -63,5 +63,7 @@ int				get_higher(t_list *lst, int val);
 int				get_lower(t_list *lst, int val);
 int				count_low(t_list *lst, int val);
 int				count_high(t_list *lst, int val);
-void			range_sort(t_list **lst, int asc);
+void			range_sort_asc(t_list **lst);
+void			range_sort_dsc(t_list **lst);
+
 #endif
