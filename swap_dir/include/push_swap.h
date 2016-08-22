@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/20 17:40:13 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/22 18:34:56 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,37 @@
 # define R 2
 # define REV 3
 
+typedef struct	s_sort
+{
+	int			high;
+	int			low;
+	int			r_high;
+	int			r_low;
+	int			rot;
+}				t_sort;
+
 typedef struct	s_pile
 {
 	int			val;
 }				t_pile;
+
+typedef struct	s_op
+{
+	char		*op;
+}				t_op;
+
+typedef struct	s_mark
+{
+	char		*ra;
+	char		*rb;
+	char		*rr;
+	char		*rra;
+	char		*rrb;
+	char		*rrr;
+	char		*sa;
+	char		*sb;
+	char		*ss;
+}				t_mark;
 
 t_list			*lst_tab2d(int ac, char **av);
 void			print_lst(t_list *lst);
@@ -56,7 +83,7 @@ void			main_sort(t_list **lst_a, t_list **lst_b);
 void			del_content(void *content, size_t size);
 void			quick_sort(t_list **lst_a, t_list **lst_b);
 void			lst_trans(t_list **lst, int range);
-int				jc_sort(t_list **lst, int asc);
+void			jc_sort(t_list **lst, int asc);
 int				get_next(t_list *lst);
 int				get_prev(t_list *lst);
 int				get_higher(t_list *lst, int val);

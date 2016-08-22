@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   asc_sort.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/08/22 16:10:48 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/22 16:10:50 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	asc_sort(t_list **lst)
@@ -20,7 +32,7 @@ int	asc_sort(t_list **lst)
 		else if (check_prev(*lst) && !check_next(*lst))
 			return (R);
 		else if (!check_prev(*lst) && check_next(*lst))
-			return (S);	
+			return (S);
 		else if (check_prev(*lst) && check_next(*lst))
 			return (S);
 	}

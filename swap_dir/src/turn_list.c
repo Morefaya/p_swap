@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/13 19:01:20 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/13 19:21:06 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/22 16:15:20 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static int	returning(int i, int j, t_list **lst)
 		while (!check_asc(*lst))
 		{
 			rotate(lst);
-			ft_putendl("ra");
+			//ft_putendl("ra");
 			k++;
 		}
 	}
@@ -31,7 +31,7 @@ static int	returning(int i, int j, t_list **lst)
 		while (!check_asc(*lst))
 		{
 			rev_rotate(lst);
-			ft_putendl("rra");
+			//ft_putendl("rra");
 			k--;
 		}
 	}
@@ -58,7 +58,7 @@ static int	checking(t_list **tmp_1, t_list **tmp_2, t_list **lst)
 	return (returning(i, j, lst));
 }
 
-int		turn_list(t_list **lst)
+int			turn_list(t_list **lst)
 {
 	t_list	*tmp_1;
 	t_list	*tmp_2;
