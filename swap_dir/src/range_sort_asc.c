@@ -36,6 +36,7 @@ static int	get_limit_low(t_list *lst)
 		limit_low = ((t_pile*)(cpy->content))->val;
 		rotate(&cpy);
 	}
+	ft_lstdel(&cpy, (void(*)(void*, size_t))del_content);
 	return (limit_low);
 }
 
@@ -63,6 +64,7 @@ static int	get_limit_high(t_list *lst)
 		limit_high = ((t_pile*)(cpy->content))->val;
 		rev_rotate(&cpy);
 	}
+	ft_lstdel(&cpy, (void(*)(void*, size_t))del_content);
 	return (limit_high);
 }
 

@@ -41,16 +41,10 @@ typedef struct	s_op
 
 typedef struct	s_mark
 {
-	char		*ra;
-	char		*rb;
-	char		*rr;
-	char		*rra;
-	char		*rrb;
-	char		*rrr;
-	char		*sa;
-	char		*sb;
-	char		*ss;
-}				t_mark;
+	char	**tab_op;
+	t_list	**op_lst;
+	int	asc;
+}		t_mark;
 
 t_list			*lst_tab2d(int ac, char **av);
 void			print_lst(t_list *lst);
@@ -83,7 +77,7 @@ void			main_sort(t_list **lst_a, t_list **lst_b);
 void			del_content(void *content, size_t size);
 void			quick_sort(t_list **lst_a, t_list **lst_b);
 void			lst_trans(t_list **lst, int range);
-void			jc_sort(t_list **lst, int asc);
+void			jc_sort(t_list **lst, int asc, t_mark *mark);
 int				get_next(t_list *lst);
 int				get_prev(t_list *lst);
 int				get_higher(t_list *lst, int val);
@@ -92,5 +86,11 @@ int				count_low(t_list *lst, int val);
 int				count_high(t_list *lst, int val);
 void			range_sort_asc(t_list **lst);
 void			range_sort_dsc(t_list **lst);
-
+void			add_op(t_list **op_lst, char *op, char **tab_op);
+char			**init_op(void);
+void			print_tab_op(char **tab_op);
+void			free_init(char **tab_op);
+void			print_op(t_list *lst_op);
+void			fusion_sort(t_list **op, t_list *op_a, t_list *op_b, char **tab_op);
+void			check_op(t_list **op);
 #endif
