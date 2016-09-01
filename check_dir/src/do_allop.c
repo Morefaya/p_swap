@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   do_op.c                                            :+:      :+:    :+:   */
+/*   do_allop.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/01 19:40:54 by jcazako           #+#    #+#             */
-/*   Updated: 2016/09/01 20:43:07 by jcazako          ###   ########.fr       */
+/*   Created: 2016/09/01 18:15:13 by jcazako           #+#    #+#             */
+/*   Updated: 2016/09/01 18:48:08 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-void	do_op(t_list **lst_a, t_list **lst_b)
+void		do_allop(t_list **lst_a, t_list **lst_b, t_list **op_lst)
 {
-	char	*line;
-	t_list	*tmp;
-	t_op	content;
+	int		len;
+	int		i;
 
-	if (!(tmp = ft_lstnew(&content, sizeof(content))))
-		return ;
-	while (get_next_line(0, &line))
+	i = 0;
+	len = ft_lstcount(*op_lst);
+	while (i++ < len)
 	{
-		((t_op*)(tmp->content))->op = line;
-		operate(lst_a, lst_b, &tmp);
-		print_lst(*lst_a);
-		print_lst(*lst_b);
-		ft_putchar('\n');
-		free(line);
+		operate(lst_a, lst_b, op_lst);
+		rotate(op_lst);
 	}
-	free(line);
-	ft_lstdel(&tmp, (void(*)(void*, size_t))del_content);
 }
