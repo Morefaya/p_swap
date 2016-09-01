@@ -22,7 +22,6 @@ static int	returning(int i, int j, t_list **lst)
 		while (!check_asc(*lst))
 		{
 			rotate(lst);
-			//ft_putendl("ra");
 			k++;
 		}
 	}
@@ -31,7 +30,6 @@ static int	returning(int i, int j, t_list **lst)
 		while (!check_asc(*lst))
 		{
 			rev_rotate(lst);
-			//ft_putendl("rra");
 			k--;
 		}
 	}

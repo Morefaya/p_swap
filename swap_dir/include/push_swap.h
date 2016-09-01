@@ -84,8 +84,8 @@ int				get_higher(t_list *lst, int val);
 int				get_lower(t_list *lst, int val);
 int				count_low(t_list *lst, int val);
 int				count_high(t_list *lst, int val);
-void			range_sort_asc(t_list **lst);
-void			range_sort_dsc(t_list **lst);
+void			range_sort_asc(t_list **lst, int asc, t_mark *mark);
+void			range_sort_dsc(t_list **lst, int asc, t_mark *mark);
 void			add_op(t_list **op_lst, char *op, char **tab_op);
 char			**init_op(void);
 void			print_tab_op(char **tab_op);
@@ -93,4 +93,7 @@ void			free_init(char **tab_op);
 void			print_op(t_list *lst_op);
 void			fusion_sort(t_list **op, t_list *op_a, t_list *op_b, char **tab_op);
 void			check_op(t_list **op);
+void			rev_local(t_list **lst, t_mark *mark);
+void			r_local(t_list **lst, t_mark *mark);
+void			s_local(t_list **lst, t_mark *mark);
 #endif

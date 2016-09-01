@@ -3,6 +3,10 @@
 
 #include "libft.h"
 
+#define OPT "ab"
+#define OPT_A 01
+#define OPT_B 02
+
 typedef struct	s_op
 {
 	char	*op;
@@ -29,5 +33,6 @@ void	swap(t_list **lst);
 void	rev_rotate(t_list **lst);
 void	push(t_list **lst_a, t_list **lst_b);
 int	check_asc(t_list *lst);
+int	get_option(int ac, char **av);
 
 #endif

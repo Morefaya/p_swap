@@ -7,7 +7,7 @@ turn_list.c check_prevnext.c asc_sort.c where_is.c hard_sort.c\
 swaping_sort.c end_push.c main_sort.c del_content.c quick_sort.c lst_trans.c\
 jc_sort.c get_next.c get_prev.c get_higher.c get_lower.c count_low.c count_high.c\
 range_sort_asc.c range_sort_dsc.c init_op.c add_op.c print_tab_op.c free_init.c\
-print_op.c fusion_sort.c check_op.c
+print_op.c fusion_sort.c check_op.c local_op.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(SRC:.c=.o)

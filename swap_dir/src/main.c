@@ -45,39 +45,53 @@ int		main(int ac, char **av)
 	mark.op_lst = &op_b;
 	jc_sort(&lst_b, 0, &mark);
 
-	/*print_lst(lst_a);
+	print_lst(lst_a);
 	print_lst(lst_b);
-	ft_putchar('\n');*/
+	ft_putchar('\n');
 
-	print_op(op_a);
+	/*print_op(op_a);
 	ft_putchar('\n');
 	print_op(op_b);
+	ft_putchar('\n');*/
+
+	mark.tab_op = tab_op;
+	mark.op_lst = &op_a;
+	range_sort_asc(&lst_a, 1, &mark);
+	/*ft_putchar('\n');
+	print_op(op_b);*/
+	mark.op_lst = &op_b;
+	range_sort_dsc(&lst_b, 0, &mark);
+	
+	print_lst(lst_a);
+	print_lst(lst_b);
 	ft_putchar('\n');
+	/*print_op(op_a);
+	ft_putchar('\n');
+	print_op(op_b);
+	ft_putchar('\n');*/
 
 	check_op(&op_a);
 	check_op(&op_b);
-	
-	print_op(op_a);
+
+	/*print_op(op_a);
 	ft_putchar('\n');
 	print_op(op_b);
-	ft_putchar('\n');
+	ft_putchar('\n');*/
 
 	fusion_sort(&op, op_a, op_b, tab_op);
 
 	/*print_op(op);
 	ft_putchar('\n');*/
 
-	/*print_lst(lst_a);
-	print_lst(lst_b);
-	ft_putchar('\n');*/
-	range_sort_asc(&lst_a);
-	range_sort_dsc(&lst_b);
 	turn_list(&lst_a);
 	turn_list(&lst_b);
 	while (lst_b)
 		push(&lst_b, &lst_a);
-	/*print_lst(lst_a);
-	print_lst(lst_b);*/
+	/*check_op(&op_a);			tout ce block
+	check_op(&op_b);			doit
+	fusion_sort(&op, op_a, op_b, tab_op);	etre ici*/
+	print_lst(lst_a);
+	print_lst(lst_b);
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
 	free_init(tab_op);

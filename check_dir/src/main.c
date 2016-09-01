@@ -19,12 +19,12 @@ int			puterror(int *tab, int ret)
 	return (ret);
 }
 
-void		del_op(void *content, size_t size)
+/*void		del_op(void *content, size_t size)
 {
 	free(((t_op*)(content))->op);
 	ft_bzero(content, size);
 	free(content);
-}
+}*/
 
 static void	print_result(t_list *lst)
 {
@@ -41,9 +41,12 @@ int			main(int ac, char **av)
 	t_list	*op_lst;
 	t_list	*lst_a;
 	t_list	*lst_b;
+	int	opt;
 
 	if (ac == 1)
 		return (0);
+	if (!(opt = get_option(ac, av)))
+		ac = count_arg(ac, av);
 	if (!(tab = (int*)malloc(sizeof(*tab) * (ac - 1))))
 		return (1);
 	if ((ret = check_nbr(ac, av, tab)))

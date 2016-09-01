@@ -68,7 +68,7 @@ static int	get_limit_high(t_list *lst)
 	return (limit_high);
 }
 
-static void	deal_swap(t_list **lst)
+static void	deal_swap(t_list **lst, t_mark *mark)
 {
 	int		highest;
 	int		lowest;
@@ -77,31 +77,32 @@ static void	deal_swap(t_list **lst)
 	lowest = get_lowest(*lst);
 	if (!check_next(*lst) \
 		&& (((t_pile*)(*lst)->content))->val != lowest)
-		swap(lst);
+		s_local(lst, mark);
 }
 
-void		range_sort_dsc(t_list **lst)
+void		range_sort_dsc(t_list **lst, int asc,t_mark *mark)
 {
 	int		lim_low;
 	int		lim_high;
 
+	mark->asc = asc;
 	while (check_asc_rot(*lst) != -1)
 	{
 		while (check_asc_rot(*lst) != -1)
 		{
-			deal_swap(lst);
+			deal_swap(lst, mark);
 			lim_low = get_limit_low(*lst);
 			if (((t_pile*)((*lst)->content))->val <= lim_low)
 				break ;
-			rotate(lst);
+			r_local(lst, mark);
 		}
 		while (check_asc_rot(*lst) != -1)
 		{
-			deal_swap(lst);
+			deal_swap(lst, mark);
 			lim_high = get_limit_high(*lst);
 			if (((t_pile*)((*lst)->content))->val >= lim_high)
 				break ;
-			rev_rotate(lst);
+			rev_local(lst, mark);
 		}
 	}
 }

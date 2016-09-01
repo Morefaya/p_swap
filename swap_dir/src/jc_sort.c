@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static void	rev_local(t_list **lst, t_mark *mark)
+/*static void	rev_local(t_list **lst, t_mark *mark)
 {
 	if (mark->asc)
 		add_op(mark->op_lst, "rra", mark->tab_op);
@@ -37,7 +37,7 @@ static void	s_local(t_list **lst, t_mark *mark)
 	else
 		add_op(mark->op_lst, "sb", mark->tab_op);
 	swap(lst);
-}
+}*/
 
 static void	help_low(t_list **lst, int high, t_mark *mark)
 {
