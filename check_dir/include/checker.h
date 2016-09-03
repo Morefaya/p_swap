@@ -2,6 +2,7 @@
 # define CHECKER_H
 
 #include "libft.h"
+#include "ft_printf.h"
 
 #define OPT "ab"
 #define OPT_A 01

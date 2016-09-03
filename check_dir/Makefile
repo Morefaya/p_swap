@@ -11,7 +11,7 @@ OBJ_DIR = ./obj
 OBJ_O = $(patsubst %, $(OBJ_DIR)/%, $(OBJ))
 HDIR = include
 LIB = ../libft/libft.a
-L_H = -L ../libft -lft
+L_H = -L ../libft -lft -L ../ft_printf -lftprintf
 FILE = 
 NAME = ../checker
 .PHONY: re run rr clean fclean all
