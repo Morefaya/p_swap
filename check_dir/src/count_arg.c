@@ -25,6 +25,6 @@ int	count_arg(int ac, char ***av)
 	nbr_opt = i;
 	while (i++ < ac)
 		j++;
-	(*av) += --nbr_opt;
-	return (++j);
+	(*av) += nbr_opt;
+	return (j);
 }

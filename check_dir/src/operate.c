@@ -14,10 +14,13 @@
 
 static void	operate_exit(t_list **lst_a, t_list **lst_b, t_list **op_lst)
 {
+	(void)op_lst;
+	(void)lst_a;
+	(void)lst_b;
 	ft_putendl("Error");
-	ft_lstdel(op_lst, (void(*)(void*, size_t))del_op);
-	ft_lstdel(lst_a, (void(*)(void*, size_t))del_content);
-	ft_lstdel(lst_b, (void(*)(void*, size_t))del_content);
+	//ft_lstdel(op_lst, (void(*)(void*, size_t))del_op);
+	//ft_lstdel(lst_a, (void(*)(void*, size_t))del_content);
+	//ft_lstdel(lst_b, (void(*)(void*, size_t))del_content);
 	exit(1);
 }
 

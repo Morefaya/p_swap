@@ -12,9 +12,8 @@
 
 #include "checker.h"
 
-int			puterror(int *tab, int ret)
+int		puterror(int ret)
 {
-	free(tab);
 	ft_putendl_fd("Error", 2);
 	return (ret);
 }
@@ -27,44 +26,19 @@ static void	print_result(t_list *lst_a, t_list *lst_b)
 		ft_putendl("KO");
 }
 
-static void	check(int opt, t_list **lst_a, t_list **lst_b)
+int		main(int ac, char **av)
 {
-	t_list	*op_lst;
-
-	op_lst = NULL;
-	if (!opt)
-	{
-		if (!(op_lst = get_op_lst()))
-			return ;
-		do_allop(lst_a, lst_b, &op_lst);
-		ft_lstdel(&op_lst, (void(*)(void*, size_t))del_op);
-	}
-	else if (opt & OPT_A)
-		do_op(lst_a, lst_b);
-}
-
-int			main(int ac, char **av)
-{
-	int		*tab;
 	t_list	*lst_a;
 	t_list	*lst_b;
-	int		opt;
+	int	opt;
 
 	lst_b = NULL;
 	if (ac == 1)
 		return (0);
-	if ((opt = get_option(ac, av)))
-		ac = count_arg(ac, &av);
-	if (!(tab = (int*)malloc(sizeof(*tab) * (ac - 1))))
+	if (!(lst_a = deal_arg(ac, &opt, av)))
 		return (1);
-	if (check_nbr(ac, av, tab) || !(lst_a = lst_inttab(tab, ac - 1)))
-	{
-		free(tab);
-		return (3);
-	}
-	check(opt, &lst_a, &lst_b);
+	deal_op(opt, &lst_a, &lst_b);
 	print_result(lst_a, lst_b);
-	free(tab);
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
 	return (0);

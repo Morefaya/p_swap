@@ -17,13 +17,14 @@ int	check_nbr(int ac, char **av, int *tab)
 	int	i;
 
 	i = 0;
-	while (++i < ac)
+	while (i < ac)
 	{
 		if (!strisnbr(av[i]))
-			return (puterror(tab, 2));
-		tab[i - 1] = ft_atoi(av[i]);
-		if (double_val(tab, i - 1) || max_int(tab[i - 1], av[i]))
-			return (puterror(tab, 3));
+			return (puterror(2));
+		tab[i] = ft_atoi(av[i]);
+		if (double_val(tab, i) || max_int(tab[i], av[i]))
+			return (puterror(3));
+		i++;
 	}
 	return (0);
 }
