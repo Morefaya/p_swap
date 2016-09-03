@@ -109,4 +109,9 @@ int					ft_lstcount(t_list *lst);
 char				*ft_strinsert(char *str, char *insert, size_t pos);
 int					ft_abs(int a);
 t_list				*ft_lstcpy(t_list *lst, size_t content_size);
+void				ft_lstrotate(t_list **lst);
+void				ft_lstrev_rotate(t_list **lst);
+void				ft_lstswap(t_list **lst);
+void				ft_lstpush(t_list **lst_a, t_list **lst_b);
+void				ft_lsttrans(t_list **lst, int range);
 #endif
