@@ -40,12 +40,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	@rm -rf $(OBJ_O)
-	@echo "\033[31mobject files removed\033[0m"
+	@echo "\033[31mpush_swap object files removed\033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
 	@rm -rf $(OBJ_DIR)
-	@echo "\033[31mpush_swap deleted\033[0m"
+	@echo "\033[31mpush_swap removed\033[0m"
 
 re: fclean all
 

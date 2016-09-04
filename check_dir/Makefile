@@ -36,9 +36,11 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 
 clean:
 	@rm -rf $(OBJ_O)
+	@echo "\033[31mchecker object files removed\033[0m"
 
 fclean: clean
 	@rm -rf $(NAME)
+	@echo "\033[31mchecker removed\033[0m"
 	@rm -rf $(OBJ_DIR)
 
 re: fclean all

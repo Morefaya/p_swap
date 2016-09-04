@@ -35,53 +35,22 @@ int		main(int ac, char **av)
 	ft_putchar('\n');
 	quick_sort(&lst_a, &lst_b);
 
-	print_lst(lst_a);
-	print_lst(lst_b);
-	ft_putchar('\n');
-
 	mark.tab_op = tab_op;
 	mark.op_lst = &op_a;
 	jc_sort(&lst_a, 1, &mark);
 	mark.op_lst = &op_b;
 	jc_sort(&lst_b, 0, &mark);
 
-	print_lst(lst_a);
-	print_lst(lst_b);
-	ft_putchar('\n');
-
-	/*print_op(op_a);
-	ft_putchar('\n');
-	print_op(op_b);
-	ft_putchar('\n');*/
-
 	mark.tab_op = tab_op;
 	mark.op_lst = &op_a;
 	range_sort_asc(&lst_a, 1, &mark);
-	/*ft_putchar('\n');
-	print_op(op_b);*/
 	mark.op_lst = &op_b;
 	range_sort_dsc(&lst_b, 0, &mark);
-	
-	print_lst(lst_a);
-	print_lst(lst_b);
-	ft_putchar('\n');
-	/*print_op(op_a);
-	ft_putchar('\n');
-	print_op(op_b);
-	ft_putchar('\n');*/
 
 	check_op(&op_a);
 	check_op(&op_b);
 
-	/*print_op(op_a);
-	ft_putchar('\n');
-	print_op(op_b);
-	ft_putchar('\n');*/
-
 	fusion_sort(&op, op_a, op_b, tab_op);
-
-	/*print_op(op);
-	ft_putchar('\n');*/
 
 	turn_list(&lst_a);
 	turn_list(&lst_b);

@@ -96,4 +96,5 @@ void			check_op(t_list **op);
 void			rev_local(t_list **lst, t_mark *mark);
 void			r_local(t_list **lst, t_mark *mark);
 void			s_local(t_list **lst, t_mark *mark);
+void			p_local(t_list **lst_a, t_list **lst_b, t_mark *mark);
 #endif

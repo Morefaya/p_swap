@@ -26,3 +26,12 @@ void	s_local(t_list **lst, t_mark *mark)
 		add_op(mark->op_lst, "sb", mark->tab_op);
 	swap(lst);
 }
+
+void	p_local(t_list **lst_a, t_list **lst_b, t_mark *mark)
+{
+	if (mark->asc)
+		add_op(mark->op_lst, "pa", mark->tab_op);
+	else
+		add_op(mark->op_lst, "pb", mark->tab_op);
+	push(lst_a, lst_b);
+}

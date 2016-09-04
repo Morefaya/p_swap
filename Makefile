@@ -24,12 +24,9 @@ push_swap:
 clean:
 	@make clean -C $(CHECK_DIR)
 	@make clean -C $(SWAP_DIR)
-	@echo "\033[31mobject files removed\033[0m"
 
-fclean: clean_lib clean
+fclean: clean_lib
 	@make fclean -C $(CHECK_DIR)
-	@echo "\033[31mchecker removed\033[0m"
 	@make fclean -C $(SWAP_DIR)
-	@echo "\033[31mpush_swap removed\033[0m"
 
 re: fclean all
