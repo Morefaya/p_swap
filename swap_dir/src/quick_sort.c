@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	quick_sort(t_list **lst_a, t_list **lst_b)
+int	quick_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 {
 	int		median;
 	int		nb_link;
@@ -25,12 +25,11 @@ void	quick_sort(t_list **lst_a, t_list **lst_b)
 	{
 		if (((t_pile*)((*lst_a)->content))->val < median)
 		{
-			push(lst_a, lst_b);
+			p_local(lst_a, lst_b, mark);
 			i++;
 		}
 		else
-		{
-			rotate(lst_a);
-		}
+			r_local(lst_a, mark);
 	}
+	return (i);
 }

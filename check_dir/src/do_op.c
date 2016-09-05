@@ -24,6 +24,7 @@ void	do_op(t_list **lst_a, t_list **lst_b)
 	{
 		((t_op*)(tmp->content))->op = line;
 		operate(lst_a, lst_b, &tmp);
+		ft_putchar('\n');
 		print_lst(*lst_a);
 		print_lst(*lst_b);
 		ft_putchar('\n');

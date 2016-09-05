@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-static int	returning(int i, int j, t_list **lst)
+static int	returning(int i, int j, t_list **lst, t_mark *mark)
 {
 	int	k;
 
@@ -21,7 +21,7 @@ static int	returning(int i, int j, t_list **lst)
 	{
 		while (!check_asc(*lst))
 		{
-			rotate(lst);
+			r_local(lst, mark);
 			k++;
 		}
 	}
@@ -29,14 +29,14 @@ static int	returning(int i, int j, t_list **lst)
 	{
 		while (!check_asc(*lst))
 		{
-			rev_rotate(lst);
+			rev_local(lst, mark);
 			k--;
 		}
 	}
 	return (k);
 }
 
-static int	checking(t_list **tmp_1, t_list **tmp_2, t_list **lst)
+static int	checking(t_list **tmp_1, t_list **tmp_2, t_list **lst, t_mark *mark)
 {
 	int		i;
 	int		j;
@@ -53,10 +53,10 @@ static int	checking(t_list **tmp_1, t_list **tmp_2, t_list **lst)
 		rev_rotate(tmp_2);
 		j++;
 	}
-	return (returning(i, j, lst));
+	return (returning(i, j, lst, mark));
 }
 
-int			turn_list(t_list **lst)
+int			turn_list(t_list **lst, t_mark *mark)
 {
 	t_list	*tmp_1;
 	t_list	*tmp_2;
@@ -73,7 +73,7 @@ int			turn_list(t_list **lst)
 		ft_lstdel(&tmp_1, (void(*)(void*, size_t))del_content);
 		return (0);
 	}
-	ret = checking(&tmp_1, &tmp_2, lst);
+	ret = checking(&tmp_1, &tmp_2, lst, mark);
 	ft_lstdel(&tmp_1, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&tmp_2, (void(*)(void*, size_t))del_content);
 	return (ret);

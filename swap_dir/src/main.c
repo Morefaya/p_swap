@@ -31,10 +31,21 @@ int		main(int ac, char **av)
 		return (1);
 	if (!(tab_op = init_op()))
 		return (2);
+	/*print_lst(lst_a);
+	ft_putchar('\n');*/
+
+	mark.tab_op = tab_op;
+	mark.op_lst = &op_a;
+	mark.asc = 0;
+	quick_sort(&lst_a, &lst_b, &mark);
+	
+	/*print_op(op_a);
+	ft_putchar('\n');
+
 	print_lst(lst_a);
 	ft_putchar('\n');
-	quick_sort(&lst_a, &lst_b);
-
+	print_lst(lst_b);
+	ft_putchar('\n');*/
 	mark.tab_op = tab_op;
 	mark.op_lst = &op_a;
 	jc_sort(&lst_a, 1, &mark);
@@ -46,21 +57,28 @@ int		main(int ac, char **av)
 	range_sort_asc(&lst_a, 1, &mark);
 	mark.op_lst = &op_b;
 	range_sort_dsc(&lst_b, 0, &mark);
+	
+	mark.tab_op = tab_op;
+	mark.op_lst = &op_a;
+	mark.asc = 1;
+	turn_list(&lst_a, &mark);
+	mark.op_lst = &op_b;
+	mark.asc = 0;
+	turn_list(&lst_b, &mark);
 
 	check_op(&op_a);
 	check_op(&op_b);
 
 	fusion_sort(&op, op_a, op_b, tab_op);
 
-	turn_list(&lst_a);
-	turn_list(&lst_b);
+	mark.op_lst = &op;
+	mark.asc = 1;
 	while (lst_b)
-		push(&lst_b, &lst_a);
-	/*check_op(&op_a);			tout ce block
-	check_op(&op_b);			doit
-	fusion_sort(&op, op_a, op_b, tab_op);	etre ici*/
+		p_local(&lst_b, &lst_a, &mark);
+	print_op(op);
+	/*ft_printf("\n");
 	print_lst(lst_a);
-	print_lst(lst_b);
+	print_lst(lst_b);*/
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
 	free_init(tab_op);

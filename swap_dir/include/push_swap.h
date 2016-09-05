@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+# include "ft_printf.h"
 
 # define N 0
 # define S 1
@@ -66,7 +67,7 @@ int				check_prev(t_list *lst);
 int				check_next(t_list *lst);
 int				get_highest(t_list *lst);
 int				get_lowest(t_list *lst);
-int				turn_list(t_list **lst);
+int				turn_list(t_list **lst, t_mark *mark);
 int				check_prevnext(t_list *lst);
 int				asc_sort(t_list **lst);
 int				where_is(t_list *lst, int num);
@@ -75,7 +76,7 @@ void			swaping_sort(t_list **lst);
 void			end_push(t_list **lst_a, t_list **lst_b);
 void			main_sort(t_list **lst_a, t_list **lst_b);
 void			del_content(void *content, size_t size);
-void			quick_sort(t_list **lst_a, t_list **lst_b);
+int			quick_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
 void			lst_trans(t_list **lst, int range);
 void			jc_sort(t_list **lst, int asc, t_mark *mark);
 int				get_next(t_list *lst);
