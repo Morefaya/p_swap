@@ -47,6 +47,16 @@ typedef struct	s_mark
 	int	asc;
 }		t_mark;
 
+typedef struct	s_lstmed
+{
+	t_list	*tmp_1;
+	t_list	*tmp_2;
+	int	nu_med;
+	int	i;
+	int	j;
+	int	k;
+}		t_lstmed;
+
 t_list			*lst_tab2d(int ac, char **av);
 void			print_lst(t_list *lst);
 void			swap(t_list **lst);
@@ -58,6 +68,7 @@ int				danm_sort(t_list **lst_a, t_list **lst_b, int opt);
 int				lst_average(t_list *lst);
 int				lst_average_rest(t_list *lst);
 int				lst_median(t_list *lst);
+int				lstmed_range(t_list *lst, int range);
 int				check_asc(t_list *lst);
 int				check_asc_rot(t_list *lst);
 int				uni_sort(t_list *lst_a, t_list *lst_b);
@@ -98,4 +109,11 @@ void			rev_local(t_list **lst, t_mark *mark);
 void			r_local(t_list **lst, t_mark *mark);
 void			s_local(t_list **lst, t_mark *mark);
 void			p_local(t_list **lst_a, t_list **lst_b, t_mark *mark);
+void			final_sort(t_list **lst_a, t_list **lst_b, t_mark *mark, int len);
+void			swap_sort(t_list **lst_a, t_list **lst_b);
+int			test_sort(t_list **lst_a, t_list **lst_b, t_mark *mark, int len);
+void			elem_sort(t_list **lst, t_mark *mark, int range);
+void			five_sort(t_list **lst, int len);
+void		supa_swap(t_list **lst_b, t_list **lst_a, t_mark *mark);
+int		check_asc_len(t_list *lst, int len);
 #endif

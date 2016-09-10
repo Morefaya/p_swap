@@ -12,33 +12,6 @@
 
 #include "push_swap.h"
 
-/*static void	rev_local(t_list **lst, t_mark *mark)
-{
-	if (mark->asc)
-		add_op(mark->op_lst, "rra", mark->tab_op);
-	else
-		add_op(mark->op_lst, "rrb", mark->tab_op);
-	rev_rotate(lst);
-}
-
-static void	r_local(t_list **lst, t_mark *mark)
-{
-	if (mark->asc)
-		add_op(mark->op_lst, "ra", mark->tab_op);
-	else
-		add_op(mark->op_lst, "rb", mark->tab_op);
-	rotate(lst);
-}
-
-static void	s_local(t_list **lst, t_mark *mark)
-{
-	if (mark->asc)
-		add_op(mark->op_lst, "sa", mark->tab_op);
-	else
-		add_op(mark->op_lst, "sb", mark->tab_op);
-	swap(lst);
-}*/
-
 static void	help_low(t_list **lst, int high, t_mark *mark)
 {
 	if (get_next(*lst) == high)

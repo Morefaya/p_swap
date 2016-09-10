@@ -31,21 +31,48 @@ int		main(int ac, char **av)
 		return (1);
 	if (!(tab_op = init_op()))
 		return (2);
+	print_lst(lst_a);
+	ft_printf("\n");
+
+	mark.tab_op = tab_op;
+	mark.op_lst = &op;
+	mark.asc = 1;
+	supa_swap(&lst_a, &lst_b, &mark);
+	/*int	i = 0;
+	int	ret;
+	int	j;
+	int	len = ft_lstcount(lst_a);
+	while (i < len)
+	{
+		j = 0;
+		ret = test_sort(&lst_a, &lst_b, ft_lstcount(lst_a) - i);
+		while (j++ < ret)
+			rotate(&lst_a);
+		i += ret;
+	}*/
+	//five_sort(&lst_a, 5);
+	//elem_sort(&lst_a, 3);
+	//final_sort(&lst_a, &lst_b, 6);
+	//swap_sort(&lst_a, &lst_b);
+	ft_printf("lst_a:\n");
+	print_lst(lst_a);
+	ft_printf("lst_b:\n");
+	print_lst(lst_b);
+	ft_printf("\n");
+	//print_op(op);
 	/*print_lst(lst_a);
-	ft_putchar('\n');*/
+	ft_putchar('\n');
 
 	mark.tab_op = tab_op;
 	mark.op_lst = &op_a;
 	mark.asc = 0;
 	quick_sort(&lst_a, &lst_b, &mark);
 	
-	/*print_op(op_a);
-	ft_putchar('\n');
 
 	print_lst(lst_a);
 	ft_putchar('\n');
 	print_lst(lst_b);
-	ft_putchar('\n');*/
+	ft_putchar('\n');
 	mark.tab_op = tab_op;
 	mark.op_lst = &op_a;
 	jc_sort(&lst_a, 1, &mark);
@@ -76,7 +103,7 @@ int		main(int ac, char **av)
 	while (lst_b)
 		p_local(&lst_b, &lst_a, &mark);
 	print_op(op);
-	/*ft_printf("\n");
+	ft_printf("\n");
 	print_lst(lst_a);
 	print_lst(lst_b);*/
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
