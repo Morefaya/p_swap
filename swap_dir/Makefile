@@ -8,7 +8,8 @@ swaping_sort.c end_push.c del_content.c quick_sort.c lst_trans.c\
 jc_sort.c get_next.c get_prev.c get_higher.c get_lower.c count_low.c count_high.c\
 range_sort_asc.c range_sort_dsc.c init_op.c add_op.c print_tab_op.c free_init.c\
 print_op.c fusion_sort.c check_op.c local_op.c lstmed_range.c final_sort.c\
-test_sort.c elem_sort.c five_sort.c supa_swap.c check_asc_len.c
+test_sort.c elem_sort.c five_sort.c supa_swap.c check_asc_len.c check_half_sort.c\
+get_lstlen.c check_lstlen.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(SRC:.c=.o)

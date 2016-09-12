@@ -20,24 +20,37 @@ int		main(int ac, char **av)
 	t_mark	mark;
 	t_list	*op_a;
 	t_list	*op_b;
+	t_list	*op_f;
 	t_list	*op;
 
 	lst_a = NULL;
 	lst_b = NULL;
 	op_a = NULL;
 	op_b = NULL;
+	op_f = NULL;
 	op = NULL;
 	if (!(lst_a = lst_tab2d(ac, av)))
 		return (1);
 	if (!(tab_op = init_op()))
 		return (2);
-	print_lst(lst_a);
-	ft_printf("\n");
-
 	mark.tab_op = tab_op;
-	mark.op_lst = &op;
+	mark.op_lst = &op_f;
 	mark.asc = 1;
-	supa_swap(&lst_a, &lst_b, &mark);
+//	print_lst(lst_a);
+//	ft_printf("\n");
+	int	len = ft_lstcount(lst_a);
+	op_a = get_lstlen(len);
+	//ft_printf("op_a: ");
+	//print_lst(op_a);
+	while (check_lstlen(op_a))
+	{
+		final_sort(&lst_a, &lst_b, &mark, ((t_pile*)(op_a->content))->val);
+		op_a = op_a->next;
+	}
+	print_op(op_f);
+//	print_lst(lst_a);
+//	ft_printf("\n");
+	//supa_swap(&lst_a, &lst_b, &mark);
 	/*int	i = 0;
 	int	ret;
 	int	j;
@@ -52,14 +65,14 @@ int		main(int ac, char **av)
 	}*/
 	//five_sort(&lst_a, 5);
 	//elem_sort(&lst_a, 3);
-	//final_sort(&lst_a, &lst_b, 6);
+	//final_sort(&lst_a, &lst_b, &mark, ft_lstcount(lst_a));
 	//swap_sort(&lst_a, &lst_b);
-	ft_printf("lst_a:\n");
+	/*ft_printf("lst_a:\n");
 	print_lst(lst_a);
 	ft_printf("lst_b:\n");
 	print_lst(lst_b);
-	ft_printf("\n");
-	//print_op(op);
+	ft_printf("\n");*/
+//	print_op(op_f);
 	/*print_lst(lst_a);
 	ft_putchar('\n');
 

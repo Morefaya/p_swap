@@ -116,4 +116,7 @@ void			elem_sort(t_list **lst, t_mark *mark, int range);
 void			five_sort(t_list **lst, int len);
 void		supa_swap(t_list **lst_b, t_list **lst_a, t_mark *mark);
 int		check_asc_len(t_list *lst, int len);
+int		check_half_sort(t_list *lst, int len);
+t_list		*get_lstlen(int len);
+int		check_lstlen(t_list *lst);
 #endif
