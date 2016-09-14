@@ -11,8 +11,7 @@ void	final_sort(t_list **lst_a, t_list **lst_b, t_mark *mark, int len)
 	else if (!check_half_sort(*lst_a, len))
 	{
 		while (len--)
-			rotate(lst_a);
-	//	print_lst(*lst_a);
+			r_local(lst_a, mark); //il y avais un simple rotate la avant
 		return ;
 	}
 	med = lstmed_range(*lst_a, len);
@@ -25,7 +24,7 @@ void	final_sort(t_list **lst_a, t_list **lst_b, t_mark *mark, int len)
 			mark->asc = 0;
 			p_local(lst_a, lst_b, mark);
 			mark->asc = 1;
-			//i++;
+			i++;
 		}
 		else
 		{
@@ -36,9 +35,9 @@ void	final_sort(t_list **lst_a, t_list **lst_b, t_mark *mark, int len)
 	/*while (k--)
 		rev_local(lst_a, mark);*/
 	//k = i;
-	while (*lst_b)
+	while (i--)//while (*lst_b)
 		p_local(lst_b, lst_a, mark);
-	while (i++ < len / 2 + len % 2)  //while (i++ < k - 1)
+	while (i++ < len / 2 + len % 2 - 1)  //while (i++ < k - 1)
 		r_local(lst_a, mark);
 	//print_lst(*lst_a);
 }

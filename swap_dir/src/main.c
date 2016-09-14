@@ -36,34 +36,33 @@ int		main(int ac, char **av)
 	mark.tab_op = tab_op;
 	mark.op_lst = &op_f;
 	mark.asc = 1;
+	print_lst(lst_a);
+	ft_printf("\n");
+
+	//int	len = ft_lstcount(lst_a);
+	supa_swap(&lst_a, &lst_b, &mark);
+	//quart_sort(&lst_a, &lst_b, &mark, len - 4);
+	ft_printf("lst_a:\t");
+	print_lst(lst_a);
+	ft_printf("lst_b:\t");
+	print_lst(lst_b);
+
+	//quart_sort(&lst_b, &lst_a, &mark, len / 4);
+	//lst_b = get_quartlstlen(len);
+	/*int	med = lstmed_range(lst_a, len);
+	int	f_quart = lst_fquart(lst_a, len);
+	int	s_quart = lst_squart(lst_a, len);*/
+	//quart_sort(&lst_a, &lst_b, &mark, len);
+	//quart_sort(&lst_b, &lst_a, &mark, len / 2);
+	//quart_sort(&lst_b, &lst_a, &mark, ft_lstcount(lst_a) / 2);
+	//ft_printf("f_quart: %d, med: %d, s_quart: %d\n", f_quart, med, s_quart);
+	//print_op(op_f);
 //	print_lst(lst_a);
-//	ft_printf("\n");
-	int	len = ft_lstcount(lst_a);
-	op_a = get_lstlen(len);
-	//ft_printf("op_a: ");
-	//print_lst(op_a);
-	while (check_lstlen(op_a))
-	{
-		final_sort(&lst_a, &lst_b, &mark, ((t_pile*)(op_a->content))->val);
-		op_a = op_a->next;
-	}
-	print_op(op_f);
-//	print_lst(lst_a);
-//	ft_printf("\n");
+//	print_lst(lst_b);
+	//ft_printf("\n");
 	//supa_swap(&lst_a, &lst_b, &mark);
-	/*int	i = 0;
-	int	ret;
-	int	j;
-	int	len = ft_lstcount(lst_a);
-	while (i < len)
-	{
-		j = 0;
-		ret = test_sort(&lst_a, &lst_b, ft_lstcount(lst_a) - i);
-		while (j++ < ret)
-			rotate(&lst_a);
-		i += ret;
-	}*/
 	//five_sort(&lst_a, 5);
+	//len_sort(&lst_a, &mark, ft_lstcount(lst_a));
 	//elem_sort(&lst_a, 3);
 	//final_sort(&lst_a, &lst_b, &mark, ft_lstcount(lst_a));
 	//swap_sort(&lst_a, &lst_b);

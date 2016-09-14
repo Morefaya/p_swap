@@ -119,4 +119,10 @@ int		check_asc_len(t_list *lst, int len);
 int		check_half_sort(t_list *lst, int len);
 t_list		*get_lstlen(int len);
 int		check_lstlen(t_list *lst);
+void		len_sort(t_list **lst, t_mark *mark, int len);
+int		lst_fquart(t_list *lst, int range);
+int		lst_squart(t_list *lst, int range);
+int		quart_sort(t_list **lst_a, t_list **lst_b, t_mark *mark, int range);
+t_list		*get_quartlstlen(int len);
+void		cpy_link(t_list *lst);
 #endif
