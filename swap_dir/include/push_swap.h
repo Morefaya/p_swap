@@ -57,6 +57,24 @@ typedef struct	s_lstmed
 	int	k;
 }		t_lstmed;
 
+typedef struct	s_hint
+{
+	t_list	**lst_a;
+	t_list	**lst_b;
+	t_mark	*mark;
+	t_list	*lst_data;
+	t_list	*lst_conf;
+	t_list	*lst_lim;
+}		t_hint;
+
+typedef struct	s_range
+{
+	int	one;
+	int	two;
+	int	three;
+	int	four;
+}		t_range;
+
 t_list			*lst_tab2d(int ac, char **av);
 void			print_lst(t_list *lst);
 void			swap(t_list **lst);
@@ -118,11 +136,29 @@ void		supa_swap(t_list **lst_b, t_list **lst_a, t_mark *mark);
 int		check_asc_len(t_list *lst, int len);
 int		check_half_sort(t_list *lst, int len);
 t_list		*get_lstlen(int len);
-int		check_lstlen(t_list *lst);
+int		check_lstlen(t_list *lst, int div);
 void		len_sort(t_list **lst, t_mark *mark, int len);
 int		lst_fquart(t_list *lst, int range);
 int		lst_squart(t_list *lst, int range);
 int		quart_sort(t_list **lst_a, t_list **lst_b, t_mark *mark, int range);
 t_list		*get_quartlstlen(int len);
 void		cpy_link(t_list *lst);
+void		new_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
+int		lst_oct_1(t_list *lst, int range);
+int		lst_oct_2(t_list *lst, int range);
+int		lst_oct_3(t_list *lst, int range);
+int		lst_oct_4(t_list *lst, int range);
+void		oct_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
+t_tree		*get_trlen(int len, int div);
+void		print_tr(t_tree *tr);
+void		get_lstconf(t_tree *tr, t_list **lst);
+int		get_lstval(t_list *lst, int range);
+t_list		*get_lstlim(t_list *lst_conf);
+t_list		*get_lstdata(t_list *lst, int pow);
+t_list		*make_lstdata(t_list *lst, int itr);
+void		sort_it(t_list **lst);
+void		ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
+int		get_first(t_list *lst);
+int		get_last(t_list *lst);
+void		deal_hint(t_hint hint);
 #endif

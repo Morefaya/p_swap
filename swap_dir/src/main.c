@@ -35,17 +35,20 @@ int		main(int ac, char **av)
 		return (2);
 	mark.tab_op = tab_op;
 	mark.op_lst = &op_f;
-	mark.asc = 1;
-	print_lst(lst_a);
-	ft_printf("\n");
+	mark.asc = 0;
+//	print_lst(lst_a);
+//	ft_printf("\n");
 
-	//int	len = ft_lstcount(lst_a);
-	supa_swap(&lst_a, &lst_b, &mark);
-	//quart_sort(&lst_a, &lst_b, &mark, len - 4);
-	ft_printf("lst_a:\t");
+//	int	len = ft_lstcount(lst_a);
+//	supa_swap(&lst_a, &lst_b, &mark);
+//	quart_sort(&lst_a, &lst_b, &mark, len);
+//	new_sort(&lst_a, &lst_b, &mark);
+//	oct_sort(&lst_a, &lst_b, &mark);
+/*	ft_printf("lst_a:\t");
 	print_lst(lst_a);
 	ft_printf("lst_b:\t");
 	print_lst(lst_b);
+*/
 
 	//quart_sort(&lst_b, &lst_a, &mark, len / 4);
 	//lst_b = get_quartlstlen(len);
@@ -56,9 +59,8 @@ int		main(int ac, char **av)
 	//quart_sort(&lst_b, &lst_a, &mark, len / 2);
 	//quart_sort(&lst_b, &lst_a, &mark, ft_lstcount(lst_a) / 2);
 	//ft_printf("f_quart: %d, med: %d, s_quart: %d\n", f_quart, med, s_quart);
-	//print_op(op_f);
-//	print_lst(lst_a);
-//	print_lst(lst_b);
+//	print_op(op_f);
+
 	//ft_printf("\n");
 	//supa_swap(&lst_a, &lst_b, &mark);
 	//five_sort(&lst_a, 5);
@@ -66,12 +68,12 @@ int		main(int ac, char **av)
 	//elem_sort(&lst_a, 3);
 	//final_sort(&lst_a, &lst_b, &mark, ft_lstcount(lst_a));
 	//swap_sort(&lst_a, &lst_b);
-	/*ft_printf("lst_a:\n");
-	print_lst(lst_a);
-	ft_printf("lst_b:\n");
-	print_lst(lst_b);
-	ft_printf("\n");*/
 //	print_op(op_f);
+//	lst_b = make_lstdata(lst_a, 8);
+//	sort_it(&lst_a);
+	ulti_sort(&lst_a, &lst_b, &mark);
+//	print_op(op_f);
+//	print_lst(lst_b);
 	/*print_lst(lst_a);
 	ft_putchar('\n');
 
@@ -118,11 +120,13 @@ int		main(int ac, char **av)
 	ft_printf("\n");
 	print_lst(lst_a);
 	print_lst(lst_b);*/
+	//ft_trdel(&tr, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_b, (void(*)(void*, size_t))del_content);
 	free_init(tab_op);
 	ft_lstdel(&op_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&op_b, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&op, (void(*)(void*, size_t))del_content);
+//	while(42);
 	return (0);
 }

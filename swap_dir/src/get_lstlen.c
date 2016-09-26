@@ -38,7 +38,7 @@ t_list		*get_lstlen(int len)
 	data.val = len;
 	if (!(lst_len = ft_lstnew(&data, sizeof(t_pile))))
 		return (NULL);
-	while (check_lstlen(lst_len))
+	while (check_lstlen(lst_len, 3))
 	{
 		make_dblink(lst_len);
 		push(&lst_len, &trash);

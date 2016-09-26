@@ -33,7 +33,7 @@ static void	make_quadlink(t_list *lst_len)
 	dble_1 = NULL;
 	dble_2 = NULL;
 	var = ((t_pile*)(lst_len->content))->val;
-	if (var < 8)
+	if (var < 2)
 	{
 		cpy_link(lst_len);
 		return ;

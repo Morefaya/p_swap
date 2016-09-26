@@ -28,7 +28,7 @@ ft_getnbr.c ft_strisnum.c get_next_line.c \
 ft_select_charset.c ft_strstr_split.c ft_lstadd_back.c \
 ft_wordnb.c ft_strlen_str.c ft_clean.c ft_lstcount.c ft_strinsert.c \
 ft_abs.c ft_lstcpy.c ft_lstrotate.c ft_lstrev_rotate.c ft_lstswap.c \
-ft_lstpush.c ft_lsttrans.c
+ft_lstpush.c ft_lsttrans.c ft_trnew.c ft_trdelone.c ft_trdel.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(patsubst %.c, %.o, $(SRC))

@@ -28,6 +28,14 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_tree
+{
+	void		*content;
+	size_t		content_size;
+	struct s_tree	*left;
+	struct s_tree	*right;
+}			t_tree;
+
 void				ft_putchar(char a);
 void				ft_putstr(const char *str);
 void				ft_putnbr(int nbr);
@@ -81,7 +89,7 @@ char				*ft_strtrim(const char *str);
 char				*ft_itoa(int a);
 char				**ft_strsplit(char const *str, char a);
 t_list				*ft_lstnew(const void *content, size_t content_size);
-void				ft_lstdelone(t_list **alist, void (*del)(void *, size_t));
+void			ft_lstdelone(t_list **alist, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alist, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alist, t_list *new_lst);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
@@ -114,4 +122,7 @@ void				ft_lstrev_rotate(t_list **lst);
 void				ft_lstswap(t_list **lst);
 void				ft_lstpush(t_list **lst_a, t_list **lst_b);
 void				ft_lsttrans(t_list **lst, int range);
+t_tree				*ft_trnew(const void *content, size_t content_size);
+void			ft_trdelone(t_tree **atr, void (*del)(void*, size_t));
+void			ft_trdel(t_tree **atr, void (*del)(void*, size_t));
 #endif
