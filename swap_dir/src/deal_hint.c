@@ -8,7 +8,7 @@ static void	bzero_rangval(t_range *r_val)
 	r_val->four = 0;
 }
 
-static void	init_rangval(t_range *r_val, t_list *lst_data, int j)
+static void	init_rangval(t_range *r_val, t_list *lst_data, int j, int len_a)
 {
 	int	k;
 	int	l;
@@ -17,10 +17,7 @@ static void	init_rangval(t_range *r_val, t_list *lst_data, int j)
 	len = ft_lstcount(lst_data);
 	k = len / 2 - j - 1;
 	if (k < 0)
-	{
-		ft_printf("k = :%d\n", k);
 		return ;
-	}
 	l = 0;
 	while (l < k)
 	{
@@ -35,6 +32,8 @@ static void	init_rangval(t_range *r_val, t_list *lst_data, int j)
 		lst_data = lst_data->next;
 		l++;
 	}
+	if (len_a % 2)
+		lst_data = lst_data->next;
 	r_val->three = ((t_pile*)(lst_data->content))->val;
 	r_val->four = ((t_pile*)(lst_data->next->content))->val;
 }
@@ -94,8 +93,10 @@ void	deal_hint(t_hint hint)
 	int	i;
 	int	j;
 	int	len;
+	int	len_a;
 
 	len = ft_lstcount(hint.lst_lim);
+	len_a = ft_lstcount(*hint.lst_a);
 	j = 0;
 	/*ft_printf("lst_lim: ");
 	print_lst(hint.lst_lim);

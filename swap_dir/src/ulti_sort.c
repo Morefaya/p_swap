@@ -9,7 +9,7 @@ static t_list	*get_goodtr(t_list *lst, int *div)
 	lst_lim = NULL;
 	tr = NULL;
 	len = ft_lstcount(lst);
-	while (check_lstlen(lst_lim, 20))
+	while (*div < 4)//check_lstlen(lst_lim, 20))
 	{
 		ft_trdel(&tr, (void(*)(void*, size_t))del_content);
 		ft_lstdel(&lst_lim, (void(*)(void*, size_t))del_content);
@@ -46,7 +46,15 @@ void	ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 	hint.lst_data = lst_data;
 	hint.lst_conf = lst_conf;
 	hint.lst_lim = lst_lim;
-	deal_hint(hint);
+	ft_printf("lst_conf :\n");
+	print_lst(hint.lst_conf);
+	ft_printf("lst_data :\n");
+	print_lst(hint.lst_data);
+	ft_printf("lst_lim :\n");
+	print_lst(hint.lst_lim);
+	//deal_hint(hint);
+	//print_lst(*hint.lst_a);
+	//print_lst(*hint.lst_b);
 	ft_lstdel(&lst_conf, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_data, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&lst_lim, (void(*)(void*, size_t))del_content);
