@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/22 18:34:56 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/09/27 18:25:24 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,4 +161,5 @@ void		ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
 int		get_first(t_list *lst);
 int		get_last(t_list *lst);
 void		deal_hint(t_hint hint);
+t_list		*calc_lstconf(t_list *lst_data, t_list *lst_a);
 #endif

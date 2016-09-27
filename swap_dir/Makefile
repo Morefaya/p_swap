@@ -12,7 +12,7 @@ test_sort.c elem_sort.c five_sort.c  check_asc_len.c check_half_sort.c\
 get_lstlen.c check_lstlen.c len_sort.c lst_quartile.c quart_sort.c\
 cpy_link.c new_sort.c lst_oct.c oct_sort.c get_trlen.c print_tr.c\
 get_lstconf.c get_lstval.c get_lstlim.c get_lstdata.c make_lstdata.c sort_it.c\
-ulti_sort.c get_first.c get_last.c deal_hint.c
+ulti_sort.c get_first.c get_last.c deal_hint.c calc_conf.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(SRC:.c=.o)

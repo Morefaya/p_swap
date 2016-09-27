@@ -8,7 +8,7 @@ static void	bzero_rangval(t_range *r_val)
 	r_val->four = 0;
 }
 
-static void	init_rangval(t_range *r_val, t_list *lst_data, int j, int len_a)
+static void	init_rangval(t_range *r_val, t_list *lst_data, int j)
 {
 	int	k;
 	int	l;
@@ -32,8 +32,6 @@ static void	init_rangval(t_range *r_val, t_list *lst_data, int j, int len_a)
 		lst_data = lst_data->next;
 		l++;
 	}
-	if (len_a % 2)
-		lst_data = lst_data->next;
 	r_val->three = ((t_pile*)(lst_data->content))->val;
 	r_val->four = ((t_pile*)(lst_data->next->content))->val;
 }
@@ -46,7 +44,7 @@ static void	sort_hint(t_hint *hint, int *i, int j)
 	bzero_rangval(&rg);
 	init_rangval(&rg, hint->lst_data, j);
 	var = ((t_pile*)(((t_list*)(*(hint->lst_a)))->content))->val;
-	ft_printf("var :%d\t one :%d\t two :%d\t three :%d\t four :%d\n", var, rg.one, rg.two, rg.three, rg.four);
+//	ft_printf("var :%d\t one :%d\t two :%d\t three :%d\t four :%d\n", var, rg.one, rg.two, rg.three, rg.four);
 	if (var >= rg.one && var < rg.two)
 	{
 		p_local(hint->lst_a, hint->lst_b, hint->mark);
@@ -93,27 +91,25 @@ void	deal_hint(t_hint hint)
 	int	i;
 	int	j;
 	int	len;
-	int	len_a;
 
 	len = ft_lstcount(hint.lst_lim);
-	len_a = ft_lstcount(*hint.lst_a);
 	j = 0;
 	/*ft_printf("lst_lim: ");
 	print_lst(hint.lst_lim);
 	ft_printf("len :%d\n", len);*/
 	while (j < len - 1)
 	{
-		ft_printf("ici\n");
+		//ft_printf("ici\n");
 		i = 0;
 		while (i < ((t_pile*)(hint.lst_lim->content))->val)
 		{
-			ft_printf("hint\n");
+			//ft_printf("hint\n");
 			sort_hint(&hint, &i, j);
-			ft_printf("%d\n", i);
+			//ft_printf("%d\n", i);
 		}
 		hint.lst_lim = hint.lst_lim->next;
 		j++;
-		ft_printf("la\n");
+		//ft_printf("la\n");
 	}
 	i = 0;
 	while (i < ((t_pile*)(hint.lst_lim->content))->val)
