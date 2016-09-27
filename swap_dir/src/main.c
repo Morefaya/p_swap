@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:43:49 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/20 19:33:34 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/09/27 20:04:47 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,6 @@ int		main(int ac, char **av)
 	ft_lstdel(&op_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&op_b, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&op, (void(*)(void*, size_t))del_content);
-//	while(42);
+	//while(42);
 	return (0);
 }
