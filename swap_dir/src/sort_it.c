@@ -2,16 +2,12 @@
 
 void	sort_it(t_list **lst)
 {
-	int	len;
 	int	max;
 	int	i;
-	int	min;
 	int	var;
 	int	next;
 
-	len = ft_lstcount(*lst);
 	max = get_highest(*lst);
-	min = get_lowest(*lst);
 	i = 0;
 	while (check_asc_rot(*lst) != 1)
 	{
@@ -25,7 +21,7 @@ void	sort_it(t_list **lst)
 			rotate(lst);
 			i++;
 		}
-		i = len - 1;
+		i = ft_lstcount(*lst) - 1;
 		while (i >= 0)
 		{
 			var = ((t_pile*)((*lst)->content))->val;
