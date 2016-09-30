@@ -47,12 +47,13 @@ static void	sort_hint(t_hint *hint, int *i, int j)
 	if (var >= rg.one && var < rg.two)
 	{
 		p_local(hint->lst_a, hint->lst_b, hint->mark);
+		r_local(hint->lst_b, hint->mark);
 		(*i)++;
 	}
 	else if (var >= rg.three && var < rg.four)
 	{
 		p_local(hint->lst_a, hint->lst_b, hint->mark);
-		r_local(hint->lst_b, hint->mark);
+		//r_local(hint->lst_b, hint->mark);
 		(*i)++;
 	}
 	else
@@ -82,12 +83,13 @@ static void	sort_hint_2(t_hint *hint, int *i)
 	if (var < first)
 	{
 		p_local(hint->lst_a, hint->lst_b, hint->mark);
+		r_local(hint->lst_b, hint->mark);
 		(*i)++;
 	}
 	else if (var >= last)
 	{
 		p_local(hint->lst_a, hint->lst_b, hint->mark);
-		r_local(hint->lst_b, hint->mark);
+		//r_local(hint->lst_b, hint->mark);
 		(*i)++;
 	}
 }

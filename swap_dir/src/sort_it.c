@@ -12,7 +12,7 @@ void	sort_it(t_list **lst)
 	while (check_asc_rot(*lst) != 1)
 	{
 		i = 0;
-		while (i < len)
+		while (i < ft_lstcount(*lst))
 		{
 			var = ((t_pile*)((*lst)->content))->val;
 			next = ((t_pile*)((*lst)->next->content))->val;

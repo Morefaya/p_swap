@@ -40,10 +40,16 @@ void	ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 	hint.lst_conf = calc_lstconf(hint.lst_data, *hint.lst_a);
 	hint.lst_lim = get_lstlim(hint.lst_conf);
 	deal_hint(hint);
-	/*ft_printf("\n\nresultat :\nlst_a: \n");
+	//sort_push(hint.lst_b, hint.lst_a, hint.lst_conf);
+	ft_printf("lst_a: \n");
 	print_lst(*hint.lst_a);
 	ft_printf("lst_b :\n");
-	print_lst(*hint.lst_b);*/
+	print_lst(*hint.lst_b);
+	sort_push(hint.lst_b, hint.lst_a, hint.lst_conf);
+	ft_printf("lst_a: \n");
+	print_lst(*hint.lst_a);
+	ft_printf("lst_b :\n");
+	print_lst(*hint.lst_b);
 	ft_lstdel(&lst_conf, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&hint.lst_conf, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&hint.lst_data, (void(*)(void*, size_t))del_content);

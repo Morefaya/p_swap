@@ -163,4 +163,5 @@ int		get_last(t_list *lst);
 void		deal_hint(t_hint hint);
 t_list		*calc_lstconf(t_list *lst_data, t_list *lst_a);
 int			check_rothint(t_hint *hint, t_range rg);
+void		sort_push(t_list **lst_1, t_list **lst_2, t_list *lst_conf);
 #endif

@@ -72,10 +72,10 @@ int		main(int ac, char **av)
 //	lst_b = make_lstdata(lst_a, 8);
 //	sort_it(&lst_a);
 	ulti_sort(&lst_a, &lst_b, &mark);
-	print_op(op_f);
-//	print_lst(lst_b);
+//	print_op(op_f);
 	/*print_lst(lst_a);
 	ft_putchar('\n');
+	print_lst(lst_b);
 
 	mark.tab_op = tab_op;
 	mark.op_lst = &op_a;
