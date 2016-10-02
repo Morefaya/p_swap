@@ -71,7 +71,15 @@ int		main(int ac, char **av)
 //	print_op(op_f);
 //	lst_b = make_lstdata(lst_a, 8);
 //	sort_it(&lst_a);
+	ft_printf("lst_a :\n");
+	print_lst(lst_a);
+	ft_printf("lst_b :\n");
+	print_lst(lst_b);
 	ulti_sort(&lst_a, &lst_b, &mark);
+	ft_printf("lst_a :");
+	print_lst(lst_a);
+	ft_printf("lst_b :");
+	print_lst(lst_b);
 //	print_op(op_f);
 	/*print_lst(lst_a);
 	ft_putchar('\n');

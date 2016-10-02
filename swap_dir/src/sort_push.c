@@ -53,6 +53,8 @@ static int	seek_way(t_list *lst, int var)
 		rev_rotate(&tmp_2);
 		j++;
 	}
+	ft_lstdel(&tmp_1, (void(*)(void*, size_t))del_content);
+	ft_lstdel(&tmp_2, (void(*)(void*, size_t))del_content);
 	if (i <= j)
 		return (i);
 	else
@@ -105,9 +107,18 @@ void	sort_push(t_list **lst_1, t_list **lst_2, t_list *lst_conf)
 	int		len;
 	t_list	*cpy_s;
 
-	/*ft_printf("lst_conf: ");
-	print_lst(lst_conf);*/
+	//ft_printf("lst_conf: ");
+	//print_lst(lst_conf);
+	if (lst_conf->next)
+		sort_push(lst_1, lst_2, lst_conf->next);
 	cpy_s = NULL;
+	len = ((t_pile*)(lst_conf->content))->val;
+	if (!(cpy_s = cpy_len(*lst_1, len)))
+		return ;
+	sort_it(&cpy_s);
+	deal_sort(lst_1, lst_2, cpy_s);
+	ft_lstdel(&cpy_s, (void(*)(void*, size_t))del_content);
+	/*cpy_s = NULL;
 	while (lst_conf)
 	{
 		ft_lstdel(&cpy_s, (void(*)(void*, size_t))del_content);
@@ -115,6 +126,9 @@ void	sort_push(t_list **lst_1, t_list **lst_2, t_list *lst_conf)
 		if (!(cpy_s = cpy_len(*lst_1, len)))
 			return ;
 		sort_it(&cpy_s);
+		deal_sort(lst_1, lst_2, cpy_s);
+		lst_conf = lst_conf->next;
+	}*/
 		/*ft_printf("cpy_s: ");
 		print_lst(cpy_s);
 		ft_printf("lst_1 :");
@@ -122,7 +136,4 @@ void	sort_push(t_list **lst_1, t_list **lst_2, t_list *lst_conf)
 		ft_printf("lst_2 :");
 		print_lst(*lst_2);
 		ft_printf("\n");*/
-		deal_sort(lst_1, lst_2, cpy_s);
-		lst_conf = lst_conf->next;
-	}
 }
