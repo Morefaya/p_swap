@@ -1,15 +1,27 @@
 #include "push_swap.h"
 
+static int	choose_nb(int len)
+{
+	int	tmp;
+	int	nb;
+
+	tmp = len / 100;
+	nb = 7 + 7 * tmp;
+	return (nb);
+}
+
 static t_list	*get_goodtr(t_list *lst, int *div)
 {
 	t_list	*lst_conf;
 	t_tree	*tr;
 	int	len;
+	int	nb;
 
 	lst_conf = NULL;
 	tr = NULL;
 	len = ft_lstcount(lst);
-	while (check_lstlen(lst_conf, 7)) //(*div < 4)
+	nb = choose_nb(len);
+	while (check_lstlen(lst_conf, nb)) //(*div < 4)
 	{
 		ft_trdel(&tr, (void(*)(void*, size_t))del_content);
 		ft_lstdel(&lst_conf, (void(*)(void*, size_t))del_content);
@@ -38,7 +50,7 @@ void	ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 	hint.lst_conf = calc_lstconf(hint.lst_data, *hint.lst_a);
 	hint.lst_lim = get_lstlim(hint.lst_conf);
 	deal_hint(hint);
-	sort_push(hint.lst_b, hint.lst_a, hint.lst_conf);
+	sort_push(hint, hint.lst_conf);
 	//sort_push(hint);
 	ft_lstdel(&lst_conf, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&hint.lst_conf, (void(*)(void*, size_t))del_content);

@@ -61,62 +61,47 @@ static int	seek_way(t_list *lst, int var)
 		return (-1 * j);
 }
 
-static void	deal_sort(t_list **lst_1, t_list **lst_2, t_list *cpy_s)
+static void	deal_sort(t_hint hint, t_list *cpy_s)
 {
 	int		val;
 	int		tmp;
 	int		high;
 
 	if (cpy_s->next)
-		deal_sort(lst_1, lst_2, cpy_s->next);
-	val = ((t_pile*)((*lst_1)->content))->val;
+		deal_sort(hint, cpy_s->next);
+	val = ((t_pile*)((*(hint.lst_b))->content))->val;
 	high = ((t_pile*)(cpy_s->content))->val;
-	//ft_printf("high = %d\n", high);
 	if (val == high)
 	{
-		push(lst_1, lst_2);
-		/*ft_printf("lst_1 \n");
-		print_lst(*lst_1);
-		ft_printf("lst_2 \n");
-		print_lst(*lst_2);*/
+		p_local(hint.lst_b, hint.lst_a, hint.mark);
 	}
-	else if ((tmp = seek_way(*lst_1, high)) > 0)
+	else if ((tmp = seek_way(*(hint.lst_b), high)) > 0)
 	{
 		while (tmp--)
-			rotate(lst_1);
-		push(lst_1, lst_2);
-		/*ft_printf("lst_1 \n");
-		print_lst(*lst_1);
-		ft_printf("lst_2 \n");
-		print_lst(*lst_2);*/
+			r_local(hint.lst_b, hint.mark);
+		p_local(hint.lst_b, hint.lst_a, hint.mark);
 	}
 	else
 	{
 		while (tmp++)
-			rev_rotate(lst_1);
-		/*ft_printf("lst_1 \n");
-		print_lst(*lst_1);
-		ft_printf("lst_2 \n");
-		print_lst(*lst_2);*/
-		push(lst_1, lst_2);
+			rev_local(hint.lst_b, hint.mark);
+		p_local(hint.lst_b, hint.lst_a, hint.mark);
 	}
 }
 
-void	sort_push(t_list **lst_1, t_list **lst_2, t_list *lst_conf)
+void	sort_push(t_hint hint, t_list *lst_conf)
 {
-	int		len;
+	int	len;
 	t_list	*cpy_s;
 
-	//ft_printf("lst_conf: ");
-	//print_lst(lst_conf);
 	if (lst_conf->next)
-		sort_push(lst_1, lst_2, lst_conf->next);
+		sort_push(hint, lst_conf->next);
 	cpy_s = NULL;
 	len = ((t_pile*)(lst_conf->content))->val;
-	if (!(cpy_s = cpy_len(*lst_1, len)))
+	if (!(cpy_s = cpy_len(*(hint.lst_b), len)))
 		return ;
 	sort_it(&cpy_s);
-	deal_sort(lst_1, lst_2, cpy_s);
+	deal_sort(hint, cpy_s);
 	ft_lstdel(&cpy_s, (void(*)(void*, size_t))del_content);
 	/*cpy_s = NULL;
 	while (lst_conf)
@@ -129,11 +114,4 @@ void	sort_push(t_list **lst_1, t_list **lst_2, t_list *lst_conf)
 		deal_sort(lst_1, lst_2, cpy_s);
 		lst_conf = lst_conf->next;
 	}*/
-		/*ft_printf("cpy_s: ");
-		print_lst(cpy_s);
-		ft_printf("lst_1 :");
-		print_lst(*lst_1);
-		ft_printf("lst_2 :");
-		print_lst(*lst_2);
-		ft_printf("\n");*/
 }
