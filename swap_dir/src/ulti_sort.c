@@ -4,9 +4,11 @@ static int	choose_nb(int len)
 {
 	int	tmp;
 	int	nb;
+	int	aux;
 
+	aux = 7;
 	tmp = len / 100;
-	nb = 7 + 7 * tmp;
+	nb = aux + aux * tmp;
 	return (nb);
 }
 
@@ -21,7 +23,7 @@ static t_list	*get_goodtr(t_list *lst, int *div)
 	tr = NULL;
 	len = ft_lstcount(lst);
 	nb = choose_nb(len);
-	while (check_lstlen(lst_conf, nb)) //(*div < 4)
+	while (check_lstlen(lst_conf, nb))
 	{
 		ft_trdel(&tr, (void(*)(void*, size_t))del_content);
 		ft_lstdel(&lst_conf, (void(*)(void*, size_t))del_content);
@@ -51,7 +53,6 @@ void	ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 	hint.lst_lim = get_lstlim(hint.lst_conf);
 	deal_hint(hint);
 	sort_push(hint, hint.lst_conf);
-	//sort_push(hint);
 	ft_lstdel(&lst_conf, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&hint.lst_conf, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&hint.lst_data, (void(*)(void*, size_t))del_content);

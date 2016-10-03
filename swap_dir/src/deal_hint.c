@@ -53,20 +53,20 @@ static void	sort_hint(t_hint *hint, int *i, int j)
 	else if (var >= rg.three && var < rg.four)
 	{
 		p_local(hint->lst_a, hint->lst_b, hint->mark);
-		//r_local(hint->lst_b, hint->mark);
+		if (ft_lstcount(*(hint->lst_b)) > 1)
+		{
+				if (!check_next(*(hint->lst_b)))
+					s_local(hint->lst_b, hint->mark);
+		}
 		(*i)++;
 	}
 	else
 	{
 		hint->mark->asc = 1;
-		//r_local(hint->lst_a, hint->mark);
 		if (check_rothint(hint, rg))
 			r_local(hint->lst_a, hint->mark);
 		else
-		{
-			//ft_printf("BOOM");
 			rev_local(hint->lst_a, hint->mark);
-		}
 		hint->mark->asc = 0;
 	}
 }
@@ -89,7 +89,6 @@ static void	sort_hint_2(t_hint *hint, int *i)
 	else if (var >= last)
 	{
 		p_local(hint->lst_a, hint->lst_b, hint->mark);
-		//r_local(hint->lst_b, hint->mark);
 		(*i)++;
 	}
 }

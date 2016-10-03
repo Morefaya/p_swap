@@ -71,22 +71,26 @@ static void	deal_sort(t_hint hint, t_list *cpy_s)
 		deal_sort(hint, cpy_s->next);
 	val = ((t_pile*)((*(hint.lst_b))->content))->val;
 	high = ((t_pile*)(cpy_s->content))->val;
+	hint.mark->asc = 1;
 	if (val == high)
-	{
 		p_local(hint.lst_b, hint.lst_a, hint.mark);
-	}
 	else if ((tmp = seek_way(*(hint.lst_b), high)) > 0)
 	{
+		hint.mark->asc = 0;
 		while (tmp--)
 			r_local(hint.lst_b, hint.mark);
+		hint.mark->asc = 1;
 		p_local(hint.lst_b, hint.lst_a, hint.mark);
 	}
 	else
 	{
+		hint.mark->asc = 0;
 		while (tmp++)
 			rev_local(hint.lst_b, hint.mark);
+		hint.mark->asc = 1;
 		p_local(hint.lst_b, hint.lst_a, hint.mark);
 	}
+	hint.mark->asc = 0;
 }
 
 void	sort_push(t_hint hint, t_list *lst_conf)
@@ -103,15 +107,4 @@ void	sort_push(t_hint hint, t_list *lst_conf)
 	sort_it(&cpy_s);
 	deal_sort(hint, cpy_s);
 	ft_lstdel(&cpy_s, (void(*)(void*, size_t))del_content);
-	/*cpy_s = NULL;
-	while (lst_conf)
-	{
-		ft_lstdel(&cpy_s, (void(*)(void*, size_t))del_content);
-		len = ((t_pile*)(lst_conf->content))->val;
-		if (!(cpy_s = cpy_len(*lst_1, len)))
-			return ;
-		sort_it(&cpy_s);
-		deal_sort(lst_1, lst_2, cpy_s);
-		lst_conf = lst_conf->next;
-	}*/
 }
