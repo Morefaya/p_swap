@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ulti_sort.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 18:58:32 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 19:00:42 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-static int	choose_nb(int len)
+static int		choose_nb(int len)
 {
 	int	tmp;
 	int	nb;
@@ -16,8 +28,8 @@ static t_list	*get_goodtr(t_list *lst, int *div)
 {
 	t_list	*lst_conf;
 	t_tree	*tr;
-	int	len;
-	int	nb;
+	int		len;
+	int		nb;
 
 	lst_conf = NULL;
 	tr = NULL;
@@ -36,12 +48,12 @@ static t_list	*get_goodtr(t_list *lst, int *div)
 	return (lst_conf);
 }
 
-void	ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
+void			ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 {
 	t_list	*lst_conf;
-	int	div;
+	int		div;
 	t_hint	hint;
-	
+
 	div = 1;
 	hint.lst_a = lst_a;
 	hint.lst_b = lst_b;

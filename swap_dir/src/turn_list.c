@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/13 19:01:20 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/22 16:15:20 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/04 20:05:26 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ int			turn_list(t_list **lst, t_mark *mark)
 {
 	t_list	*tmp_1;
 	t_list	*tmp_2;
-	int	ret;
+	int		ret;
 
 	if (!lst)
 		return (0);

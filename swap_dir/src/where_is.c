@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   where_is.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 20:04:39 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 20:08:15 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	checking(t_list **tmp_1, t_list **tmp_2, int num)
@@ -23,11 +35,11 @@ static int	checking(t_list **tmp_1, t_list **tmp_2, int num)
 		return (-1 * j);
 }
 
-int		where_is(t_list *lst, int num)
+int			where_is(t_list *lst, int num)
 {
 	t_list	*tmp_1;
 	t_list	*tmp_2;
-	int	ret;
+	int		ret;
 
 	if (!lst)
 		return (0);
