@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_limit_high.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 21:51:59 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 22:26:29 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	get_limit_high(t_list *lst)
 {
-	int	highest;
+	int		highest;
 	t_list	*cpy;
-	int	i;
-	int	limit_high;
+	int		i;
+	int		limit_high;
 
 	if (!lst)
 		return (0);

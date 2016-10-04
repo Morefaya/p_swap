@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_lstlim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 21:50:00 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 22:23:54 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static t_list	*make_lstlim(t_list *lst, int low, int high)
@@ -5,7 +17,7 @@ static t_list	*make_lstlim(t_list *lst, int low, int high)
 	t_list	*lst_lim;
 	t_pile	data;
 	t_list	*tmp;
-	
+
 	lst_lim = NULL;
 	while (low >= 0 && high < ft_lstcount(lst))
 	{
@@ -25,26 +37,12 @@ static t_list	*make_lstlim(t_list *lst, int low, int high)
 	return (lst_lim);
 }
 
-t_list	*get_lstlim(t_list *lst)
+t_list			*get_lstlim(t_list *lst)
 {
-	//t_tree	*tr;
-	//t_list	*lst;
 	t_list	*lst_lim;
-	int	len;
+	int		len;
 
-	/*lst = NULL;
-	if (!(tr = get_trlen(len, div)))
-		return (NULL);
-	get_lstconf(tr, &lst);
-	if (!lst)
-	{
-		ft_trdel(&tr, (void(*)(void*, size_t))del_content);
-		return (NULL);
-	}*/
 	len = ft_lstcount(lst);
-	//ft_printf("len :%d\n", len);
 	lst_lim = make_lstlim(lst, len / 2 - 1, len / 2);
-	//ft_lstdel(&lst, (void(*)(void*, size_t))del_content);
-	//ft_trdel(&tr, (void(*)(void*, size_t))del_content);
 	return (lst_lim);
 }

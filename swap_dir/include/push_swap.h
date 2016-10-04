@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/04 20:24:48 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/04 22:34:17 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,14 @@ typedef struct	s_seek
 	int			j;
 }				t_seek;
 
+typedef	struct	s_main
+{
+	t_list	*lst_a;
+	t_list	*lst_b;
+	char	**tab_op;
+	t_list	*op;
+}				t_main;
+
 t_list			*lst_tab2d(int ac, char **av);
 void			print_lst(t_list *lst);
 void			swap(t_list **lst);
@@ -99,7 +107,6 @@ int				check_asc(t_list *lst);
 int				check_asc_rot(t_list *lst);
 int				uni_sort(t_list *lst_a, t_list *lst_b);
 void			del_content(void *content, size_t content_size);
-void			snd_step(t_list **lst, int opt);
 int				check_prev(t_list *lst);
 int				check_next(t_list *lst);
 int				get_highest(t_list *lst);
@@ -113,15 +120,12 @@ void			main_sort(t_list **lst_a, t_list **lst_b);
 void			del_content(void *content, size_t size);
 int			quick_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
 void			lst_trans(t_list **lst, int range);
-void			jc_sort(t_list **lst, int asc, t_mark *mark);
 int				get_next(t_list *lst);
 int				get_prev(t_list *lst);
 int				get_higher(t_list *lst, int val);
 int				get_lower(t_list *lst, int val);
 int				count_low(t_list *lst, int val);
 int				count_high(t_list *lst, int val);
-void			range_sort_asc(t_list **lst, int asc, t_mark *mark);
-void			range_sort_dsc(t_list **lst, int asc, t_mark *mark);
 void			add_op(t_list **op_lst, char *op, char **tab_op);
 char			**init_op(void);
 void			print_tab_op(char **tab_op);
@@ -134,37 +138,35 @@ void			s_local(t_list **lst, t_mark *mark);
 void			p_local(t_list **lst_a, t_list **lst_b, t_mark *mark);
 void			elem_sort(t_list **lst, t_mark *mark, int range);
 void			five_sort(t_list **lst, int len);
-int		check_asc_len(t_list *lst, int len);
-int		check_half_sort(t_list *lst, int len);
+int			check_asc_len(t_list *lst, int len);
+int			check_half_sort(t_list *lst, int len);
 t_list		*get_lstlen(int len);
-int		check_lstlen(t_list *lst, int div);
+int			check_lstlen(t_list *lst, int div);
 void		len_sort(t_list **lst, t_mark *mark, int len);
-int		lst_fquart(t_list *lst, int range);
-int		lst_squart(t_list *lst, int range);
-int		quart_sort(t_list **lst_a, t_list **lst_b, t_mark *mark, int range);
-t_list		*get_quartlstlen(int len);
 void		cpy_link(t_list *lst);
-void		new_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
-int		lst_oct_1(t_list *lst, int range);
-int		lst_oct_2(t_list *lst, int range);
-int		lst_oct_3(t_list *lst, int range);
-int		lst_oct_4(t_list *lst, int range);
-void		oct_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
 t_tree		*get_trlen(int len, int div);
 void		print_tr(t_tree *tr);
 void		get_lstconf(t_tree *tr, t_list **lst);
-int		get_lstval(t_list *lst, int range);
+int			get_lstval(t_list *lst, int range);
 t_list		*get_lstlim(t_list *lst_conf);
 t_list		*get_lstdata(t_list *lst, int pow);
 t_list		*make_lstdata(t_list *lst, int itr);
 void		sort_it(t_list **lst);
 void		ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
-int		get_first(t_list *lst);
-int		get_last(t_list *lst);
+int			get_first(t_list *lst);
+int			get_last(t_list *lst);
 void		deal_hint(t_hint hint);
 t_list		*calc_lstconf(t_list *lst_data, t_list *lst_a);
 int			check_rothint(t_hint *hint, t_range rg);
 void		sort_push(t_hint hint, t_list *lst_conf);
 void		deal_sort(t_hint hint, t_list *cpy_s);
 int			seek_way(t_list *lst, int var);
+void		sort_hint(t_hint *hint, int *i, int j);
+void		sort_hint_2(t_hint *hint, int *i);
+void		init_rangval(t_range *r_val, t_list *lst_data, int j);
+void		bzero_rangval(t_range *r_val);
+int			count_below(t_list *lst, int val);
+int			count_above(t_list *lst, int val);
+int			count_btw(t_list *lst, int one, int two);
+
 #endif

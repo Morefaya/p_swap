@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_limit_low.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 21:52:09 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 22:26:18 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	get_limit_low(t_list *lst)
 {
-	int	lowest;
+	int		lowest;
 	t_list	*cpy;
-	int	i;
-	int	limit_low;
+	int		i;
+	int		limit_low;
 
 	if (!lst)
 		return (0);

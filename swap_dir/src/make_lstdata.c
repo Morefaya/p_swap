@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   make_lstdata.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 20:58:15 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 20:58:22 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_list	*make_lstdata(t_list *lst, int itr)
 {
 	t_list	*lst_data;
 	t_list	*tmp;
-	int	pow;
-	int	i;
+	int		pow;
+	int		i;
 
 	lst_data = NULL;
 	i = 0;

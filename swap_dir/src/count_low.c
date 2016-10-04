@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/20 16:19:02 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/20 16:31:58 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/04 22:40:35 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,5 @@ int		count_low(t_list *lst, int val)
 			i++;
 		tmp = tmp->next;
 	}
- 	return (i);
+	return (i);
 }

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   len_sort.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 21:47:30 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 21:47:32 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	step(t_list **lst, t_mark *mark, int *cond, int *i)
@@ -22,7 +34,7 @@ static void	step(t_list **lst, t_mark *mark, int *cond, int *i)
 	}
 }
 
-void	len_sort(t_list **lst, t_mark *mark, int len)
+void		len_sort(t_list **lst, t_mark *mark, int len)
 {
 	int	i;
 	int	cond;
@@ -30,10 +42,6 @@ void	len_sort(t_list **lst, t_mark *mark, int len)
 	i = 0;
 	cond = 1;
 	while (i < len - 1)
-	{
 		step(lst, mark, &cond, &i);
-		//ft_printf("nbr i: %d\n", i);
-		//print_lst(*lst);
-	}
 	r_local(lst, mark);
 }

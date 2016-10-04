@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_op.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 22:37:02 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 22:37:53 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	check_dbop(t_list **op)
@@ -17,59 +29,6 @@ static int	check_dbop(t_list **op)
 		return (1);
 	return (0);
 }
-
-/*static void	pushing(t_list **op, t_list **trash, int *action, t_list **first)
-{
-	int	cond;
-
-	cond = 0;
-	if (*op == *first)
-		cond = 1;
-	push(op, trash);
-	push(op, trash);
-	*action = 1;
-	if (cond)
-		*first = *op;
-}
-
-void		check_op(t_list **op)
-{
-	t_list	*trash;
-	int	action;
-	t_list	*first;
-	int	cond;
-	int	i;
-
-	if (!*op || ft_lstcount(*op) <= 1)
-		return ;
-	trash = NULL;
-	first = *op;
-	cond = 1;
-	print_op(*op);
-	ft_putchar('\n');
-	i = 1;
-	while (*op != first || cond)
-	{
-		ft_putstr("tour: ");
-		ft_putnbr(i);
-		ft_putchar('\n');
-		if (i == 20)
-			break;
-		i++;
-		cond = 0;
-		action = 0;
-		if (!(*op)->next)
-			break ;
-		if (check_dbop(op))
-			pushing(op, &trash, &action, &first);
-		if (!action)
-			rotate(op);
-		print_op(*op);
-		ft_putchar('\n');
-	}
-	rotate(op);
-	ft_lstdel(&trash, (void(*)(void*, size_t))del_content);
-}*/
 
 static int	verif_op(t_list *op)
 {
@@ -91,7 +50,7 @@ static void	reducer(t_list *tmp, t_list **op, t_list **trash)
 	i = 0;
 	while (tmp != *op)
 	{
-		rotate (op);
+		rotate(op);
 		i++;
 	}
 	push(op, trash);

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_trlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 22:22:00 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 22:22:02 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static void	make_link(t_tree *tr, int itr)
 {
-	int	var;
+	int		var;
 	t_pile	data;
 	t_tree	*tmp;
 
@@ -21,7 +33,7 @@ static void	make_link(t_tree *tr, int itr)
 	make_link(tr->right, itr - 1);
 }
 
-t_tree	*get_trlen(int len, int div)
+t_tree		*get_trlen(int len, int div)
 {
 	t_pile	data;
 	t_tree	*tr;

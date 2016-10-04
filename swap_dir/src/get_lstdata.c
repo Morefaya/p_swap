@@ -1,8 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_lstdata.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/04 21:50:48 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/04 22:22:32 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 static int	lstdata(t_list *lst, int range, int i, int pow)
 {
 	t_lstmed	tmp;
+
 	if (!lst)
 		return (0);
 	tmp.j = 0;
@@ -27,12 +40,12 @@ static int	lstdata(t_list *lst, int range, int i, int pow)
 	return (tmp.nu_med);
 }
 
-t_list	*get_lstdata(t_list *lst, int pow)
+t_list		*get_lstdata(t_list *lst, int pow)
 {
 	t_list	*data;
 	t_list	*tmp;
 	t_pile	content;
-	int	i;
+	int		i;
 
 	i = 1;
 	data = NULL;
