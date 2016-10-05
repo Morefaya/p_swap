@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 18:27:44 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 17:13:04 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/08/17 18:07:35 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ typedef struct		s_list
 
 typedef struct		s_tree
 {
-	void			*content;
-	size_t			content_size;
+	void		*content;
+	size_t		content_size;
 	struct s_tree	*left;
 	struct s_tree	*right;
-}					t_tree;
+}			t_tree;
 
 void				ft_putchar(char a);
 void				ft_putstr(const char *str);
@@ -89,7 +89,7 @@ char				*ft_strtrim(const char *str);
 char				*ft_itoa(int a);
 char				**ft_strsplit(char const *str, char a);
 t_list				*ft_lstnew(const void *content, size_t content_size);
-void				ft_lstdelone(t_list **alist, void (*del)(void *, size_t));
+void			ft_lstdelone(t_list **alist, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alist, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alist, t_list *new_lst);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
@@ -123,6 +123,6 @@ void				ft_lstswap(t_list **lst);
 void				ft_lstpush(t_list **lst_a, t_list **lst_b);
 void				ft_lsttrans(t_list **lst, int range);
 t_tree				*ft_trnew(const void *content, size_t content_size);
-void				ft_trdelone(t_tree **atr, void (*del)(void*, size_t));
-void				ft_trdel(t_tree **atr, void (*del)(void*, size_t));
+void			ft_trdelone(t_tree **atr, void (*del)(void*, size_t));
+void			ft_trdel(t_tree **atr, void (*del)(void*, size_t));
 #endif
