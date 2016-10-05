@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 17:51:57 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 18:22:23 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 18:50:35 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,13 +29,15 @@ static int	deal_option(int *opt, int *ac, char ***av)
 	}
 	else
 	{
-		ft_printf("else :\n");
+		ft_printf("else : *ac: %d\n", *ac);
 		ft_printf("%s\n", **av);
 		(*av)++;
 		(*ac)--;
 	}
 	ft_printf("end :\n");
 	ft_printf("%s\n", **av);
+	ft_printf("end :\n");
+	ft_printf("%s\n", *(*av + 1));
 	return (0);
 }
 
