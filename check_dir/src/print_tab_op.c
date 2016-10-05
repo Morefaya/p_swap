@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_nbr.c                                        :+:      :+:    :+:   */
+/*   print_tab_op.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/08/17 17:29:55 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 19:58:59 by jcazako          ###   ########.fr       */
+/*   Created: 2016/10/04 20:58:54 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/05 19:51:50 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	check_nbr(int ac, char **av, int *tab)
+void	print_tab_op(char **tab_op)
 {
 	int	i;
 
 	i = 0;
-	while (i < ac)
-	{
-		if (!strisnbr(av[i]))
-			return (puterror(2));
-		tab[i] = ft_atoi(av[i]);
-		if (double_val(tab, i) || max_int(tab[i], av[i]))
-			return (puterror(3));
-		i++;
-	}
-	return (0);
+	while (tab_op[i])
+		ft_putendl(tab_op[i++]);
 }

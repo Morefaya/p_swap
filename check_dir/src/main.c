@@ -6,13 +6,13 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/17 17:32:07 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 17:51:51 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 20:33:17 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int		puterror(int ret)
+int			puterror(int ret)
 {
 	ft_putendl_fd("Error", 2);
 	return (ret);
@@ -26,11 +26,11 @@ static void	print_result(t_list *lst_a, t_list *lst_b)
 		ft_putendl("KO");
 }
 
-int		main(int ac, char **av)
+int			main(int ac, char **av)
 {
 	t_list	*lst_a;
 	t_list	*lst_b;
-	int	opt;
+	int		opt;
 
 	lst_b = NULL;
 	if (ac == 1)

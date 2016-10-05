@@ -6,32 +6,31 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/01 21:07:43 by jcazako           #+#    #+#             */
-/*   Updated: 2016/09/01 21:07:45 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 19:44:43 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-int	get_option(int ac, char **av)
+int	get_option(int ac, int *opt, char **av)
 {
 	int	i;
 	int	j;
-	int	opt;
 
 	i = 1;
-	opt = 0;
+	*opt = 0;
 	while (i < ac && av[i][0] == '-')
 	{
 		j = 1;
 		while (av[i][j] && ft_strchr(OPT, av[i][j]))
 		{
 			if (av[i][j] == 'a')
-				opt |= OPT_A;
+				*opt |= OPT_A;
 			else if (av[i][j] == 'b')
-				opt |= OPT_B;
+				*opt |= OPT_B;
 			j++;
 		}
 		i++;
 	}
-	return (opt);
+	return (i - 1);
 }

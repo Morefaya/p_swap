@@ -6,74 +6,47 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 17:51:57 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 18:22:23 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 20:32:42 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
 
-static int	deal_option(int *opt, int *ac, char ***av)
-{
-	ft_printf("start deal_opt :\n");
-	ft_printf("%s\n", **av);
-	if ((*opt = get_option(*ac, *av)))
-	{
-		ft_printf("get_opt :\n");
-		ft_printf("%s\n", **av);
-		if (!(*ac = count_arg(*ac, av)))
-		{
-			ft_printf("count_arg :\n");
-			ft_printf("%s\n", **av);
-			return (1);
-		}
-	}
-	else
-	{
-		ft_printf("else :\n");
-		ft_printf("%s\n", **av);
-		(*av)++;
-		(*ac)--;
-	}
-	ft_printf("end :\n");
-	ft_printf("%s\n", **av);
-	return (0);
-}
-
-static char	**get_av_cpy(int *ac, char **av)
+static char	**get_av_cpy(int nb_opt, int ac, int *nb_arg, char **av)
 {
 	char	**av_cpy;
 
+	*nb_arg = ac - nb_opt - 1;
 	av_cpy = NULL;
-	if (*ac == 1)
+	if (!*nb_arg)
+		return (NULL);
+	else if (*nb_arg == 1)
 	{
-		if (!(av_cpy = ft_strstr_split(av[0], " \t")))
+		if (!(av_cpy = ft_strstr_split(av[nb_opt + 1], " \t")))
 			return (NULL);
-		*ac = count_nbr_split(av_cpy);
+		*nb_arg = count_nbr_split(av_cpy);
 	}
-	else
-	{
-		if (!(av_cpy = arg_cpy(*ac, av)))
-			return (NULL);
-		(*ac)--;
-	}
+	else if (!(av_cpy = arg_cpy(*nb_arg, av + nb_opt + 1)))
+		return (NULL);
 	return (av_cpy);
 }
 
 t_list		*deal_arg(int ac, int *opt, char **av)
 {
 	char	**av_cpy;
-	int	*tab;
+	int		*tab;
 	t_list	*lst;
+	int		nb_arg;
 
 	lst = NULL;
-	if (deal_option(opt, &ac, &av) || !(av_cpy = get_av_cpy(&ac, av)))
+	if (!(av_cpy = get_av_cpy(get_option(ac, opt, av), ac, &nb_arg, av)))
 		return (NULL);
-	if (!(tab = (int*)malloc(sizeof(*tab) * ac)))
+	if (!(tab = (int*)malloc(sizeof(*tab) * nb_arg)))
 	{
 		delete_cpy(av_cpy);
 		return (NULL);
 	}
-	if (check_nbr(ac, av_cpy, tab) || !(lst = lst_inttab(tab, ac)))
+	if (check_nbr(nb_arg, av_cpy, tab) || !(lst = lst_inttab(tab, nb_arg)))
 	{
 		delete_cpy(av_cpy);
 		free(tab);

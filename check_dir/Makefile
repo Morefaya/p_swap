@@ -3,7 +3,7 @@ CFLAG = -Wall -Wextra -Werror
 SRC = main.c strisnbr.c double_val.c max_int.c check_nbr.c print_op.c get_op_lst.c\
 lst_inttab.c print_lst.c del_content.c do_allop.c do_op.c push.c rotate.c swap.c\
 rev_rotate.c check_asc.c get_option.c del_op.c count_arg.c operate.c\
-count_nbr_split.c deal_op.c deal_arg.c arg_cpy.c delete_cpy.c
+count_nbr_split.c deal_op.c deal_arg.c arg_cpy.c delete_cpy.c print_tab_op.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(SRC:.c=.o)
