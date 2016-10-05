@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 22:31:50 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/04 22:35:29 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 17:04:44 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static t_list	*last_lstconf(t_list *lst_a, t_list **lst_c, int val)
 
 	ct.val = count_above(lst_a, val);
 	if (!(tmp = ft_lstnew(&ct, sizeof(t_pile))))
-	{	
+	{
 		ft_lstdel(lst_c, (void(*)(void*, size_t))del_content);
 		return (NULL);
 	}
@@ -46,7 +46,7 @@ static t_list	*last_lstconf(t_list *lst_a, t_list **lst_c, int val)
 	return (*lst_c);
 }
 
-t_list	*calc_lstconf(t_list *lst_data, t_list *lst_a)
+t_list			*calc_lstconf(t_list *lst_data, t_list *lst_a)
 {
 	t_list	*lst_conf;
 	t_pile	content;

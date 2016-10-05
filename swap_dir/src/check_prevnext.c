@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_prevnext.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/05 16:58:13 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/05 16:58:15 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 int	check_prevnext(t_list *lst)
@@ -16,5 +28,5 @@ int	check_prevnext(t_list *lst)
 	if (value_next > value_prev)
 		return (1);
 	else
-		return (0);	
+		return (0);
 }

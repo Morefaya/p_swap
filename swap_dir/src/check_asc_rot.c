@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/22 16:13:02 by jcazako           #+#    #+#             */
-/*   Updated: 2016/08/22 16:13:04 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 17:02:11 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	check_asc_rot(t_list *lst)
 {
 	t_list	*tmp;
-	int	nb_link;
-	int	i;
-	int	ret;
+	int		nb_link;
+	int		i;
+	int		ret;
 
 	i = 0;
 	nb_link = ft_lstcount(lst);

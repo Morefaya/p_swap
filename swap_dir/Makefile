@@ -1,13 +1,13 @@
 CC = gcc
 CFLAG = -Wall -Wextra -Werror
 SRC = main.c lst_tab2d.c print_lst.c swap.c push.c rotate.c rev_rotate.c\
-bubble_sort.c lst_average.c lst_median.c check_asc.c uni_sort.c\
+lst_average.c lst_median.c check_asc.c uni_sort.c\
 check_asc_rot.c check_prev.c check_next.c get_highest.c get_lowest.c\
 turn_list.c check_prevnext.c asc_sort.c where_is.c\
 end_push.c del_content.c quick_sort.c lst_trans.c\
 get_next.c get_prev.c get_higher.c get_lower.c count_low.c count_high.c\
 init_op.c add_op.c print_tab_op.c free_init.c\
-print_op.c check_op.c local_op.c lstmed_range.c elem_sort.c five_sort.c\
+print_op.c check_op.c local_op.c lstmed_range.c elem_sort.c\
 check_asc_len.c check_half_sort.c\
 get_lstlen.c check_lstlen.c len_sort.c\
 cpy_link.c get_trlen.c print_tr.c\

@@ -1,17 +1,41 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   deal_arg.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/05 17:51:57 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/05 18:22:23 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "checker.h"
 
 static int	deal_option(int *opt, int *ac, char ***av)
 {
+	ft_printf("start deal_opt :\n");
+	ft_printf("%s\n", **av);
 	if ((*opt = get_option(*ac, *av)))
 	{
+		ft_printf("get_opt :\n");
+		ft_printf("%s\n", **av);
 		if (!(*ac = count_arg(*ac, av)))
+		{
+			ft_printf("count_arg :\n");
+			ft_printf("%s\n", **av);
 			return (1);
+		}
 	}
 	else
 	{
+		ft_printf("else :\n");
+		ft_printf("%s\n", **av);
 		(*av)++;
 		(*ac)--;
 	}
+	ft_printf("end :\n");
+	ft_printf("%s\n", **av);
 	return (0);
 }
 

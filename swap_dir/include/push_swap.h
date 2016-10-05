@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/04 22:34:17 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 17:12:07 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,38 +42,38 @@ typedef struct	s_op
 
 typedef struct	s_mark
 {
-	char	**tab_op;
-	t_list	**op_lst;
-	int	asc;
-}		t_mark;
+	char		**tab_op;
+	t_list		**op_lst;
+	int			asc;
+}				t_mark;
 
 typedef struct	s_lstmed
 {
-	t_list	*tmp_1;
-	t_list	*tmp_2;
-	int	nu_med;
-	int	i;
-	int	j;
-	int	k;
-}		t_lstmed;
+	t_list		*tmp_1;
+	t_list		*tmp_2;
+	int			nu_med;
+	int			i;
+	int			j;
+	int			k;
+}				t_lstmed;
 
 typedef struct	s_hint
 {
-	t_list	**lst_a;
-	t_list	**lst_b;
-	t_mark	*mark;
-	t_list	*lst_data;
-	t_list	*lst_conf;
-	t_list	*lst_lim;
-}		t_hint;
+	t_list		**lst_a;
+	t_list		**lst_b;
+	t_mark		*mark;
+	t_list		*lst_data;
+	t_list		*lst_conf;
+	t_list		*lst_lim;
+}				t_hint;
 
 typedef struct	s_range
 {
-	int	one;
-	int	two;
-	int	three;
-	int	four;
-}		t_range;
+	int			one;
+	int			two;
+	int			three;
+	int			four;
+}				t_range;
 
 typedef struct	s_seek
 {
@@ -86,10 +86,10 @@ typedef struct	s_seek
 
 typedef	struct	s_main
 {
-	t_list	*lst_a;
-	t_list	*lst_b;
-	char	**tab_op;
-	t_list	*op;
+	t_list		*lst_a;
+	t_list		*lst_b;
+	char		**tab_op;
+	t_list		*op;
 }				t_main;
 
 t_list			*lst_tab2d(int ac, char **av);
@@ -98,7 +98,6 @@ void			swap(t_list **lst);
 void			push(t_list **lst_a, t_list **lst_b);
 void			rotate(t_list **lst);
 void			rev_rotate(t_list **lst);
-void			bubble_sort(t_list **lst_a, t_list **lst_b);
 int				lst_average(t_list *lst);
 int				lst_average_rest(t_list *lst);
 int				lst_median(t_list *lst);
@@ -118,7 +117,7 @@ int				where_is(t_list *lst, int num);
 void			end_push(t_list **lst_a, t_list **lst_b);
 void			main_sort(t_list **lst_a, t_list **lst_b);
 void			del_content(void *content, size_t size);
-int			quick_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
+int				quick_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
 void			lst_trans(t_list **lst, int range);
 int				get_next(t_list *lst);
 int				get_prev(t_list *lst);
@@ -137,36 +136,35 @@ void			r_local(t_list **lst, t_mark *mark);
 void			s_local(t_list **lst, t_mark *mark);
 void			p_local(t_list **lst_a, t_list **lst_b, t_mark *mark);
 void			elem_sort(t_list **lst, t_mark *mark, int range);
-void			five_sort(t_list **lst, int len);
-int			check_asc_len(t_list *lst, int len);
-int			check_half_sort(t_list *lst, int len);
-t_list		*get_lstlen(int len);
-int			check_lstlen(t_list *lst, int div);
-void		len_sort(t_list **lst, t_mark *mark, int len);
-void		cpy_link(t_list *lst);
-t_tree		*get_trlen(int len, int div);
-void		print_tr(t_tree *tr);
-void		get_lstconf(t_tree *tr, t_list **lst);
-int			get_lstval(t_list *lst, int range);
-t_list		*get_lstlim(t_list *lst_conf);
-t_list		*get_lstdata(t_list *lst, int pow);
-t_list		*make_lstdata(t_list *lst, int itr);
-void		sort_it(t_list **lst);
-void		ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
-int			get_first(t_list *lst);
-int			get_last(t_list *lst);
-void		deal_hint(t_hint hint);
-t_list		*calc_lstconf(t_list *lst_data, t_list *lst_a);
-int			check_rothint(t_hint *hint, t_range rg);
-void		sort_push(t_hint hint, t_list *lst_conf);
-void		deal_sort(t_hint hint, t_list *cpy_s);
-int			seek_way(t_list *lst, int var);
-void		sort_hint(t_hint *hint, int *i, int j);
-void		sort_hint_2(t_hint *hint, int *i);
-void		init_rangval(t_range *r_val, t_list *lst_data, int j);
-void		bzero_rangval(t_range *r_val);
-int			count_below(t_list *lst, int val);
-int			count_above(t_list *lst, int val);
-int			count_btw(t_list *lst, int one, int two);
+int				check_asc_len(t_list *lst, int len);
+int				check_half_sort(t_list *lst, int len);
+t_list			*get_lstlen(int len);
+int				check_lstlen(t_list *lst, int div);
+void			len_sort(t_list **lst, t_mark *mark, int len);
+void			cpy_link(t_list *lst);
+t_tree			*get_trlen(int len, int div);
+void			print_tr(t_tree *tr);
+void			get_lstconf(t_tree *tr, t_list **lst);
+int				get_lstval(t_list *lst, int range);
+t_list			*get_lstlim(t_list *lst_conf);
+t_list			*get_lstdata(t_list *lst, int pow);
+t_list			*make_lstdata(t_list *lst, int itr);
+void			sort_it(t_list **lst);
+void			ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
+int				get_first(t_list *lst);
+int				get_last(t_list *lst);
+void			deal_hint(t_hint hint);
+t_list			*calc_lstconf(t_list *lst_data, t_list *lst_a);
+int				check_rothint(t_hint *hint, t_range rg);
+void			sort_push(t_hint hint, t_list *lst_conf);
+void			deal_sort(t_hint hint, t_list *cpy_s);
+int				seek_way(t_list *lst, int var);
+void			sort_hint(t_hint *hint, int *i, int j);
+void			sort_hint_2(t_hint *hint, int *i);
+void			init_rangval(t_range *r_val, t_list *lst_data, int j);
+void			bzero_rangval(t_range *r_val);
+int				count_below(t_list *lst, int val);
+int				count_above(t_list *lst, int val);
+int				count_btw(t_list *lst, int one, int two);
 
 #endif
