@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 20:50:01 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 22:06:23 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,15 @@ typedef	struct	s_main
 	char		**tab_op;
 	t_list		*op;
 }				t_main;
+
+typedef struct	s_darg
+{
+	char		**av_cpy;
+	int			*tab;
+	t_list		*lst;
+	int			nb_arg;
+	int			nb_opt;
+}				t_darg;
 
 t_list			*lst_tab2d(int ac, char **av);
 void			print_lst(t_list *lst);

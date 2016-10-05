@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 20:50:25 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 20:57:45 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 22:21:32 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # define OPT_A 01
 # define OPT_B 02
 
-
 int				strisnbr(const char *str);
 int				puterror(int ret);
 int				double_val(int *tab, int i);
@@ -30,8 +29,8 @@ int				check_nbr(int ac, char **av, int *tab);
 t_list			*get_op_lst(void);
 t_list			*lst_inttab(int *tab, int len);
 void			do_op(t_list **lst_a, t_list **lst_b);
-void			del_content(void*, size_t);
-void			del_op(void*, size_t);
+void			del_content(void *content, size_t size);
+void			del_op(void *content, size_t size);
 int				get_option(int ac, int *opt, char **av);
 int				count_arg(int ac, char ***av);
 void			operate(t_list **lst_a, t_list **lst_b, t_list **op_lst);

@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:43:49 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:43:07 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 22:17:00 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 static int	init_var(t_main *m_var, int ac, char **av)
 {
 	int		opt;
+
 	m_var->lst_b = NULL;
 	m_var->op = NULL;
 	if (!(m_var->lst_a = deal_arg(ac, &opt, av)))
@@ -34,9 +35,7 @@ int			main(int ac, char **av)
 	int		ret;
 
 	if ((ret = init_var(&m_var, ac, av)))
-	{
 		return (ret);
-	}
 	mark.asc = 0;
 	mark.tab_op = m_var.tab_op;
 	mark.op_lst = &(m_var.op);
