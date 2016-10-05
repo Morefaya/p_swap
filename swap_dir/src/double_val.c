@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_init.c                                        :+:      :+:    :+:   */
+/*   double_val.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 22:41:35 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:34:32 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/17 17:30:37 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/17 17:30:40 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_init(char **tab_op)
+int	double_val(int *tab, int i)
 {
-	int	i;
+	int	val;
+	int	j;
 
-	i = 0;
-	while (i < 11)
+	j = 0;
+	val = tab[i];
+	i--;
+	while (i >= 0)
 	{
-		free(tab_op[i]);
-		tab_op[i++] = NULL;
+		if (tab[i] == val)
+			return (1);
+		i--;
 	}
-	free(tab_op);
+	return (0);
 }

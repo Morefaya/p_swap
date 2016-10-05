@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_init.c                                        :+:      :+:    :+:   */
+/*   delete_cpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 22:41:35 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:34:32 by jcazako          ###   ########.fr       */
+/*   Created: 2016/10/05 20:32:21 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/05 20:32:23 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_init(char **tab_op)
+void	delete_cpy(char **av_cpy)
 {
 	int	i;
 
 	i = 0;
-	while (i < 11)
+	while (av_cpy[i])
 	{
-		free(tab_op[i]);
-		tab_op[i++] = NULL;
+		free(av_cpy[i]);
+		i++;
 	}
-	free(tab_op);
+	free(av_cpy);
 }

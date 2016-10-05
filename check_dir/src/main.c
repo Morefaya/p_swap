@@ -6,17 +6,11 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/17 17:32:07 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 20:33:17 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/05 21:18:46 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "checker.h"
-
-int			puterror(int ret)
-{
-	ft_putendl_fd("Error", 2);
-	return (ret);
-}
 
 static void	print_result(t_list *lst_a, t_list *lst_b)
 {

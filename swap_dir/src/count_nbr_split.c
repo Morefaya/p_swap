@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_init.c                                        :+:      :+:    :+:   */
+/*   count_nbr_split.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 22:41:35 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:34:32 by jcazako          ###   ########.fr       */
+/*   Created: 2016/10/05 20:32:00 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/05 20:32:06 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_init(char **tab_op)
+int	count_nbr_split(char **av)
 {
 	int	i;
 
 	i = 0;
-	while (i < 11)
-	{
-		free(tab_op[i]);
-		tab_op[i++] = NULL;
-	}
-	free(tab_op);
+	while (av[i])
+		i++;
+	return (i);
 }

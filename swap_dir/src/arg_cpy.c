@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_init.c                                        :+:      :+:    :+:   */
+/*   arg_cpy.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 22:41:35 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:34:32 by jcazako          ###   ########.fr       */
+/*   Created: 2016/10/05 17:55:29 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/05 20:30:57 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_init(char **tab_op)
+char	**arg_cpy(int nb_arg, char **av)
 {
-	int	i;
+	char	**av_cpy;
+	char	*tmp;
+	int		i;
 
+	if (!(av_cpy = (char**)malloc(sizeof(*av_cpy) * (nb_arg + 1))))
+		return (NULL);
 	i = 0;
-	while (i < 11)
+	while (i < nb_arg)
 	{
-		free(tab_op[i]);
-		tab_op[i++] = NULL;
+		if (!(tmp = ft_strdup(av[i])))
+		{
+			while (i)
+				free(av_cpy[i--]);
+			free(av_cpy);
+			return (NULL);
+		}
+		av_cpy[i] = tmp;
+		i++;
 	}
-	free(tab_op);
+	av_cpy[i] = NULL;
+	return (av_cpy);
 }

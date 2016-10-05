@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_init.c                                        :+:      :+:    :+:   */
+/*   check_nbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 22:41:35 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:34:32 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/17 17:29:55 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/05 19:58:59 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_init(char **tab_op)
+int	check_nbr(int ac, char **av, int *tab)
 {
 	int	i;
 
 	i = 0;
-	while (i < 11)
+	while (i < ac)
 	{
-		free(tab_op[i]);
-		tab_op[i++] = NULL;
+		if (!strisnbr(av[i]))
+			return (puterror(2));
+		tab[i] = ft_atoi(av[i]);
+		if (double_val(tab, i) || max_int(tab[i], av[i]))
+			return (puterror(3));
+		i++;
 	}
-	free(tab_op);
+	return (0);
 }

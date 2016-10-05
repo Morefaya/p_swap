@@ -1,26 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_init.c                                        :+:      :+:    :+:   */
+/*   max_int.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 22:41:35 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:34:32 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/17 17:25:04 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/17 17:29:41 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_init(char **tab_op)
+int	max_int(int value, char *str)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	while (i < 11)
-	{
-		free(tab_op[i]);
-		tab_op[i++] = NULL;
-	}
-	free(tab_op);
+	j = 0;
+	while (str[i] && ft_strchr(" \t\n", str[i]))
+		i++;
+	if (str[i] && ft_strchr("+-", str[i]))
+		i++;
+	while (str[i] == '0')
+		i++;
+	while (str[i + j] && ft_strchr("0123456789", str[i + j]))
+		j++;
+	if ((value < 0 && !ft_strchr(str, '-'))
+		|| (value > 0 && ft_strchr(str, '-'))
+		|| j > 10)
+		return (1);
+	return (0);
 }

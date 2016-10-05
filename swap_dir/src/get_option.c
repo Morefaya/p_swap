@@ -1,26 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_init.c                                        :+:      :+:    :+:   */
+/*   get_option.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 22:41:35 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:34:32 by jcazako          ###   ########.fr       */
+/*   Created: 2016/09/01 21:07:43 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/05 19:44:43 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
-void	free_init(char **tab_op)
+int	get_option(int ac, int *opt, char **av)
 {
 	int	i;
+	int	j;
 
-	i = 0;
-	while (i < 11)
+	i = 1;
+	*opt = 0;
+	while (i < ac && av[i][0] == '-')
 	{
-		free(tab_op[i]);
-		tab_op[i++] = NULL;
+		j = 1;
+		while (av[i][j] && ft_strchr(OPT, av[i][j]))
+		{
+			if (av[i][j] == 'a')
+				*opt |= OPT_A;
+			else if (av[i][j] == 'b')
+				*opt |= OPT_B;
+			j++;
+		}
+		i++;
 	}
-	free(tab_op);
+	return (i - 1);
 }

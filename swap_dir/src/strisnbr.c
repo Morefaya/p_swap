@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_init.c                                        :+:      :+:    :+:   */
+/*   strisnbr.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/04 22:41:35 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 21:34:32 by jcazako          ###   ########.fr       */
+/*   Created: 2016/08/17 17:30:57 by jcazako           #+#    #+#             */
+/*   Updated: 2016/08/17 17:30:59 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_init(char **tab_op)
+int	strisnbr(const char *str)
 {
-	int	i;
-
-	i = 0;
-	while (i < 11)
-	{
-		free(tab_op[i]);
-		tab_op[i++] = NULL;
-	}
-	free(tab_op);
+	while (*str && ft_strchr(" \t\n", *str))
+		str++;
+	if (*str && ft_strchr("-+", *str))
+		str++;
+	while (*str && ft_strchr("0123456789", *str))
+		str++;
+	if (!*str)
+		return (1);
+	return (0);
 }
