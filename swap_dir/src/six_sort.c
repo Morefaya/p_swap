@@ -1,6 +1,11 @@
 #include "push_swap.h"
 
-void	six_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
+/*static void	fusion(t_list **op, t_mark *mark)
+{
+	
+}*/
+
+void		six_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 {
 	int	var;
 	int	med;
@@ -36,4 +41,10 @@ void	six_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 		p_local(lst_b, lst_a, mark);
 		mark->asc = 0;
 	}
+	ft_printf("six_sort:\nlst_a :");
+	print_lst(*lst_a);
+	ft_lstdel_range(lst_a, 2, del_content);
+	ft_printf("before del:\nlst_a :");
+	print_lst(*lst_a);
+	//fusion(&(mark->op), mark);
 }
