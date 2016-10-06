@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 19:01:50 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/06 22:02:39 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/06 22:06:54 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,6 @@ void			sort_push(t_hint hint, t_list *lst_conf)
 	if (!(cpy_s = cpy_len(*(hint.lst_b), len)))
 		return ;
 	sort_it(&cpy_s);
-	deal_sort(hint, cpy_s);
+	deal_sort(hint, &cpy_s); // setais pa laddr avant
 	ft_lstdel(&cpy_s, (void(*)(void*, size_t))del_content);
 }
