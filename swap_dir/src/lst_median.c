@@ -16,8 +16,8 @@ int		lst_median(t_list *lst)
 {
 	t_list	*tmp_1;
 	t_list	*tmp_2;
-	int		nu_med;
-	int		i;
+	int	nu_med;
+	int	i;
 
 	if (!lst)
 		return (0);

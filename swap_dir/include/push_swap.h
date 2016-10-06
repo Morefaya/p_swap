@@ -176,5 +176,5 @@ void			bzero_rangval(t_range *r_val);
 int				count_below(t_list *lst, int val);
 int				count_above(t_list *lst, int val);
 int				count_btw(t_list *lst, int one, int two);
-
+void			six_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
 #endif

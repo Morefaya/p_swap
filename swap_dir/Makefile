@@ -12,7 +12,7 @@ get_lstdata.c make_lstdata.c sort_it.c ulti_sort.c get_first.c get_last.c\
 deal_hint.c calc_conf.c check_rothint.c sort_push.c deal_sort.c seek_way.c\
 sort_hint.c init_rangval.c bzero_rangval.c count.c deal_arg.c count_nbr_split.c\
 arg_cpy.c check_nbr.c delete_cpy.c double_val.c get_option.c lst_inttab.c\
-max_int.c puterror.c strisnbr.c
+max_int.c puterror.c strisnbr.c six_sort.c
 SRC_DIR = ./src
 SRC_C = $(patsubst %, $(SRC_DIR)/%, $(SRC))
 OBJ = $(SRC:.c=.o)

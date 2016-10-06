@@ -32,13 +32,30 @@ int			main(int ac, char **av)
 {
 	t_main	m_var;
 	t_mark	mark;
-	int		ret;
+	int	ret;
+	int	len;
 
 	if ((ret = init_var(&m_var, ac, av)))
 		return (ret);
 	mark.asc = 0;
 	mark.tab_op = m_var.tab_op;
 	mark.op_lst = &(m_var.op);
+	if ((len = ft_lstcount(m_var.lst_a)) <= 3)
+	{
+		elem_sort(&m_var.lst_a, &mark, len);
+		return (0);
+	}
+	else if (len <= 5)
+	{
+		six_sort(&m_var.lst_a, &m_var.lst_b, &mark);
+		ft_printf("lst_a :\n");
+		print_lst(m_var.lst_a);
+		ft_printf("lst_b :\n");
+		print_lst(m_var.lst_b);
+		ft_printf("op :\n");
+		print_op(m_var.op);
+		return (0);
+	}
 	ulti_sort(&m_var.lst_a, &m_var.lst_b, &mark);
 	ft_printf("lst_a :");
 	print_lst(m_var.lst_a);
