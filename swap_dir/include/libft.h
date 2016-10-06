@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/27 18:27:44 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 22:23:09 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/06 16:49:28 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,9 @@ void				ft_lsttrans(t_list **lst, int range);
 t_tree				*ft_trnew(const void *content, size_t content_size);
 void				ft_trdelone(t_tree **atr, void (*del)(void*, size_t));
 void				ft_trdel(t_tree **atr, void (*del)(void*, size_t));
-void				ft_lstdel_addr(t_list **lst, t_list *addr, void(*del)(void*, size_t));
-void	ft_lstdel_range(t_list **lst, int range, void(del)(void*, size_t));
+void				ft_lstdel_addr(t_list **lst, t_list *addr, \
+		void(*del)(void*, size_t));
+void				ft_lstdel_range(t_list **lst, int range, \
+		void(del)(void*, size_t));
+void				ft_lstadd_range(t_list **lst, t_list *nouvo, int range);
 #endif

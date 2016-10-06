@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/10 15:06:53 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/04 21:03:43 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/06 16:23:17 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@ int		lst_median(t_list *lst)
 {
 	t_list	*tmp_1;
 	t_list	*tmp_2;
-	int	nu_med;
-	int	i;
+	int		nu_med;
+	int		i;
 
 	if (!lst)
 		return (0);

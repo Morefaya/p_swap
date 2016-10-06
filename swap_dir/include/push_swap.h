@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 22:06:23 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/06 19:28:00 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,6 @@ int				asc_sort(t_list **lst);
 int				where_is(t_list *lst, int num);
 void			end_push(t_list **lst_a, t_list **lst_b);
 void			main_sort(t_list **lst_a, t_list **lst_b);
-void			del_content(void *content, size_t size);
 int				quick_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
 void			lst_trans(t_list **lst, int range);
 int				get_next(t_list *lst);
@@ -177,4 +176,5 @@ int				count_below(t_list *lst, int val);
 int				count_above(t_list *lst, int val);
 int				count_btw(t_list *lst, int one, int two);
 void			six_sort(t_list **lst_a, t_list **lst_b, t_mark *mark);
+void			three_sort(t_list **lst, t_mark *mark);
 #endif

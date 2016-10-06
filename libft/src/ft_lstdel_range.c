@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_lstdel_range.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/10/06 16:28:27 by jcazako           #+#    #+#             */
+/*   Updated: 2016/10/06 16:28:49 by jcazako          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-void	ft_lstdel_range(t_list **lst, int range, void(del)(void*, size_t))
+void	ft_lstdel_range(t_list **lst, int range, void (del)(void*, size_t))
 {
 	t_list	*tmp_1;
 	t_list	*tmp_2;
-	int	i;
+	int		i;
 
 	if (!lst || !*lst || !del)
 		return ;
