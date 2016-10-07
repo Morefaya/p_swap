@@ -102,6 +102,15 @@ typedef struct	s_darg
 	int			nb_opt;
 }				t_darg;
 
+typedef struct	s_next
+{
+	int	e;
+	int	val;
+	t_list	**cpy_s;
+	int	high;
+
+}		t_next;
+
 t_list			*lst_tab2d(int ac, char **av);
 void			print_lst(t_list *lst);
 void			swap(t_list **lst);
@@ -166,7 +175,7 @@ void			deal_hint(t_hint hint);
 t_list			*calc_lstconf(t_list *lst_data, t_list *lst_a);
 int				check_rothint(t_hint *hint, t_range rg);
 void			sort_push(t_hint hint, t_list *lst_conf);
-void			deal_sort(t_hint hint, t_list *cpy_s);
+void			deal_sort(t_hint hint, t_list **cpy_s);
 int				seek_way(t_list *lst, int var);
 void			sort_hint(t_hint *hint, int *i, int j);
 void			sort_hint_2(t_hint *hint, int *i);

@@ -34,6 +34,10 @@ int			short_len(t_main *m_var, t_mark *mark)
 	three_sort(&m_var->lst_a, mark);
 	mark->asc = 0;
 	print_op(m_var->op);
+	/*ft_printf("lst_a :");
+	print_lst(m_var->lst_a);
+	ft_printf("lst_b :");
+	print_lst(m_var->lst_b);*/
 	ft_lstdel(&m_var->lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&m_var->lst_b, (void(*)(void*, size_t))del_content);
 	free_init(m_var->tab_op);
@@ -45,6 +49,10 @@ int			mid_len(t_main *m_var, t_mark *mark)
 {
 	six_sort(&m_var->lst_a, &m_var->lst_b, mark);
 	print_op(m_var->op);
+	/*ft_printf("lst_a :");
+	print_lst(m_var->lst_a);
+	ft_printf("lst_b :");
+	print_lst(m_var->lst_b);*/
 	ft_lstdel(&m_var->lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&m_var->lst_b, (void(*)(void*, size_t))del_content);
 	free_init(m_var->tab_op);
@@ -64,12 +72,18 @@ int			main(int ac, char **av)
 	mark.asc = 0;
 	mark.tab_op = m_var.tab_op;
 	mark.op_lst = &(m_var.op);
+	//ft_printf("lst_a :");
+	//print_lst(m_var.lst_a);
 	if ((len = ft_lstcount(m_var.lst_a)) <= 3)
 		return (short_len(&m_var, &mark));
 	else if (len <= 5)
 		return (mid_len(&m_var, &mark));
 	ulti_sort(&m_var.lst_a, &m_var.lst_b, &mark);
 	print_op(m_var.op);
+	/*ft_printf("lst_a :");
+	print_lst(m_var.lst_a);
+	ft_printf("lst_b :");
+	print_lst(m_var.lst_b);*/
 	ft_lstdel(&m_var.lst_a, (void(*)(void*, size_t))del_content);
 	ft_lstdel(&m_var.lst_b, (void(*)(void*, size_t))del_content);
 	free_init(m_var.tab_op);
