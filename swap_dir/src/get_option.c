@@ -19,7 +19,7 @@ int	get_option(int ac, int *opt, char **av)
 
 	i = 1;
 	*opt = 0;
-	while (i < ac && av[i][0] == '-')
+	while (i < ac && av[i][0] == '-' && ft_strchr(OPT, av[i][1]))
 	{
 		j = 1;
 		while (av[i][j] && ft_strchr(OPT, av[i][j]))

@@ -104,7 +104,6 @@ typedef struct	s_darg
 
 typedef struct	s_next
 {
-	int	e;
 	int	val;
 	t_list	**cpy_s;
 	int	high;
