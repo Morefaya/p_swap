@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 16:59:37 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/06 20:10:58 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/08 17:07:03 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,18 @@ static void	end_it(t_list **lst_a, t_list **lst_b, t_mark *mark)
 
 void		six_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 {
-	int	var;
 	int	med;
 	int	len;
 	int	i;
 
+	if (check_asc(*lst_a) == 1)
+		return ;
 	med = lst_median(*lst_a);
 	len = ft_lstcount(*lst_a);
 	i = 0;
 	while (i < len / 2)
 	{
-		var = ((t_pile*)((*lst_a)->content))->val;
-		if (var < med)
+		if (((t_pile*)((*lst_a)->content))->val < med)
 		{
 			p_local(lst_a, lst_b, mark);
 			i++;

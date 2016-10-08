@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 18:58:32 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/04 19:00:42 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/08 17:13:33 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void			ulti_sort(t_list **lst_a, t_list **lst_b, t_mark *mark)
 	int		div;
 	t_hint	hint;
 
+	if (check_asc(*lst_a) == 1)
+		return ;
 	div = 1;
 	hint.lst_a = lst_a;
 	hint.lst_b = lst_b;

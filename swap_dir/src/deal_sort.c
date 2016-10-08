@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 19:18:04 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/06 22:41:40 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/08 16:33:38 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,15 +31,15 @@ static void	deal_tmp(int *tmp)
 static void	deal(t_hint hint, int tmp, t_next *next)
 {
 	int		val;
-	int	done;
+	int		done;
 
 	done = 0;
 	hint.mark->asc = 0;
-	val = ((t_pile*)((*(hint.lst_b))->content))->val;	
+	val = ((t_pile*)((*(hint.lst_b))->content))->val;
 	while (val != next->high)
 	{
 		deal_rot(hint, tmp);
-		val = ((t_pile*)((*(hint.lst_b))->content))->val;	
+		val = ((t_pile*)((*(hint.lst_b))->content))->val;
 		if (val == next->val && ft_abs(tmp) > 1)
 		{
 			hint.mark->asc = 1;
@@ -60,7 +60,7 @@ static void	deal(t_hint hint, int tmp, t_next *next)
 void		deal_sort(t_hint hint, t_list **cpy_s)
 {
 	int		tmp;
-	t_next		next;
+	t_next	next;
 
 	ft_lstrev(cpy_s);
 	next.cpy_s = cpy_s;
@@ -71,7 +71,7 @@ void		deal_sort(t_hint hint, t_list **cpy_s)
 		if (ft_lstcount(*cpy_s) > 1)
 			next.val = ((t_pile*)((*cpy_s)->next->content))->val;
 		else
-			next.val = ((t_pile*)((*(hint.lst_b))->content))->val;	
+			next.val = ((t_pile*)((*(hint.lst_b))->content))->val;
 		tmp = seek_way(*(hint.lst_b), next.high);
 		if (!tmp)
 		{

@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/01 21:07:43 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 19:44:43 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/08 16:58:06 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	get_option(int ac, int *opt, char **av)
 		{
 			if (av[i][j] == 'a')
 				*opt |= OPT_A;
-			else if (av[i][j] == 'b')
-				*opt |= OPT_B;
 			j++;
 		}
 		i++;

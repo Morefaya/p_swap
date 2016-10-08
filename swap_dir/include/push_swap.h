@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 20:45:40 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/06 19:28:00 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/08 16:36:23 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,11 +104,11 @@ typedef struct	s_darg
 
 typedef struct	s_next
 {
-	int	val;
-	t_list	**cpy_s;
-	int	high;
+	int			val;
+	t_list		**cpy_s;
+	int			high;
 
-}		t_next;
+}				t_next;
 
 t_list			*lst_tab2d(int ac, char **av);
 void			print_lst(t_list *lst);

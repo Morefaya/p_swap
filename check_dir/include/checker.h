@@ -6,7 +6,7 @@
 /*   By: jcazako <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 20:50:25 by jcazako           #+#    #+#             */
-/*   Updated: 2016/10/05 22:21:32 by jcazako          ###   ########.fr       */
+/*   Updated: 2016/10/08 16:56:32 by jcazako          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,8 @@
 # include "ft_printf.h"
 # include "push_swap.h"
 
-# define OPT "ab"
+# define OPT "a"
 # define OPT_A 01
-# define OPT_B 02
 
 int				strisnbr(const char *str);
 int				puterror(int ret);
